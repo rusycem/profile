@@ -1,8 +1,0 @@
-defaults:
-  -
-    scope:
-      path: ""
-      type: "pages"
-    values:
-      layout: "default"
-      permalink: "/home.html"
