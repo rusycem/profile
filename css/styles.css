@@ -1,0 +1,670 @@
+﻿/* Reset default margin and padding */
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background-image: url('../images/icon/bluebell.jpg');
+    background-size: cover; /* Cover the entire background */
+    position: relative; /* Set position relative to allow pseudo-element positioning */
+    background-repeat: no-repeat; /* Do not repeat the background image */
+    background-position: center center; /* Center the background image */
+    background-attachment: fixed; /*
+    min-height: 100vh; /* Ensure the body takes at least the full viewport height */
+}
+
+    body::before {
+        content: "";
+        position: absolute; 
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(255, 255, 255, 1); /* Semi-transparent white overlay */
+        z-index: -1; /* Ensure the overlay is behind the content */
+    }
+
+
+header {
+    background: linear-gradient(135deg, #00134e, #024cb5 ); /* Interstellar Blue */
+    color: #e8dacd; /* Malted Milk */
+    padding: 5px; /* Adjust the padding */
+    text-align: center;
+    width: 100%; /* Ensure the header spans the full width */
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+    letter-spacing: 1px;
+}
+
+    header h1 {
+        margin: 10px;
+        font-size: 24px; /* Adjust the font size */
+    }
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0; /* Remove default margin */
+    letter-spacing: 1px;
+}
+
+    nav ul li {
+        display: inline;
+        margin: 0 10px;
+    }
+
+        /* Style for menu items */
+        nav ul li a {
+            transition: box-shadow 0.3s ease; /* Smooth transition for box-shadow */
+            text-decoration: none;
+            color: #e8dacd; /* Malted Milk */
+            display: inline-block; /* Ensure the anchor tag behaves like a block element */
+            padding: 5px 20px; /* Adjust the padding to make the button wider */
+        }
+
+            nav ul li a:hover {
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 8px 16px rgba(0, 0, 0, 0.1); /* Add box-shadow on hover */
+                border-radius: 20px; /* Apply rounded corners */
+                background: linear-gradient(to right, #9dc0fa, #1f86fc); /* Pool Water */
+                color: rgba(0, 19, 78, 0.8); /* Interstellar Blue*/
+                /* Add any other styles you want to apply on hover */
+            }
+
+.page-title {
+    color: #00134e;
+    text-align: center; /* Center the text */
+    text-shadow: -1px -1px 0 #e8dacd, 1px -1px 0 #e8dacd, -1px 1px 0 #e8dacd, 1px 1px 0 #e8dacd; /* Set multiple shadows to create an outline effect */
+    letter-spacing: 2px;
+    font-size: 25px;
+
+}
+
+/* Center breadcrumb on small screens */
+@media (max-width: 768px) {
+    .page-title {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+        max-width: 60%; /* Reduce width on smaller screens */
+    }
+}
+
+
+.intro-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    margin: 20px;
+    background: linear-gradient(to right, #9dc0fa, #e8dacd);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+    .intro-section hr {
+        border-bottom-color: #00134e; /* Interstellar Blue */
+        margin-bottom: 15px;
+    }
+
+.left-column, .right-column {
+    flex: 1;
+    padding: 20px;
+    box-sizing: border-box; /* Include padding and border in the width */
+}
+
+.profile-picture-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile-picture {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.profile-picture2 {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.left-column h2 {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.left-column p {
+    text-align: center;
+    font-size: 1.2em;
+    margin-top: 10px;
+    color: #00134e;
+}
+
+.right-column h1 {
+    font-size: 3em;
+    color: #00134e;
+    margin: 0;
+    margin-right: 20px;
+}
+
+.right-column p {
+    font-size: 1.2em;
+    color: #00134e;
+    margin: 10px 0;
+    margin-right: 20px;
+}
+
+.button-container {
+    margin: 20px 0;
+}
+
+.rounded-button {
+    background: linear-gradient(135deg, #00134e, #024cb5 ); /* Interstellar Blue */
+    color: #e8dacd; /* Malted Milk */
+    border: none;
+    padding: 10px 20px;
+    margin: 5px;
+    cursor: pointer;
+    border-radius: 20px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    display: inline-block;
+}
+
+    .rounded-button:hover {
+        background: linear-gradient(to right, #9dc0fa, #1f86fc); /* Pool Water */
+        color: rgba(0, 19, 78, 0.8); /* Interstellar Blue*/
+    }
+
+.breadcrumb {
+    background: linear-gradient(135deg, #00134e, #024cb5 ); /* Interstellar Blue */
+    color: #e8dacd; /* Malted Milk */
+    border-radius: 20px;
+    padding: 10px 20px;
+    display: inline-block;
+    text-align: left;
+    margin: 10px;
+    letter-spacing: 1px;
+}
+
+/* Center breadcrumb on small screens */
+@media (max-width: 768px) {
+    .breadcrumb {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+        max-width: 50%; /* Reduce width on smaller screens */
+    }
+}
+
+.breadcrumb .separator {
+    font-weight: bold; /* Optionally, set bold font weight for separators */
+    color: #e8dacd; /* Ensure separator matches breadcrumb text color */
+}
+
+.breadcrumb a {
+    color: #e8dacd; /* Change color */
+    text-decoration: none; /* Remove underline */
+}
+
+    .breadcrumb a:hover {
+        text-shadow: 0 0 5px #000; /* Add text-shadow on hover to create a bold effect */
+    }
+
+
+/* Additional CSS for carousel animation */
+.carousel {
+    overflow: hidden; /* Hide overflow to create the slider effect */
+    width: 100%; /* Ensure the carousel takes full width */
+}
+
+.image-grid {
+    display: flex; /* Use flexbox for image alignment */
+    animation-duration: 20s; /* Duration of the animation */
+    animation-timing-function: linear; /* Linear animation */
+    animation-iteration-count: infinite; /* Infinite looping */
+}
+
+/* Additional CSS for forward animation */
+.forward .image-grid {
+    animation-name: slide-forward; /* Apply forward animation */
+    justify-content: flex-end; /* Align images to the right for the first carousel */
+}
+
+/* Additional CSS for backward animation */
+.backward .image-grid {
+    animation-name: slide-backward; /* Apply backward animation */
+    justify-content: flex-start; /* Align images to the left for the second carousel */
+}
+
+.image-grid img {
+    flex-shrink: 0; /* Prevent images from shrinking */
+    width: auto; /* Allow images to adjust width proportionally */
+    height: 200px; /* Set a fixed height for images */
+    margin-right: 5px; /* Adjust margin between images */
+}
+
+
+/* Additional CSS for carousel animation */
+@keyframes slide-forward {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(50%);
+    }
+}
+
+@keyframes slide-backward {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+    header nav ul {
+        display: flex;
+        flex-wrap: wrap; /* Allow menu items to wrap to the next line */
+        justify-content: center; /* Center align menu items */
+    }
+
+        header nav ul li {
+            flex: 0 0 50%; /* Set menu items to take up half of the available width */
+            text-align: center; /* Center align menu items */
+            margin-bottom: 10px; /* Add some space between menu items */
+        }
+}
+
+
+/* Media query for small screens */
+@media screen and (max-width: 600px) {
+    nav ul {
+        display: none; /* Hide the regular menu on small screens */
+    }
+}
+
+/* General content styles */
+#content {
+    margin-bottom: 20px;
+    color: #00134e;
+    letter-spacing: 1px;
+}
+
+
+/* Center breadcrumb on small screens */
+@media (max-width: 768px) {
+    #content h2 {
+        text-align: center;
+    }
+}
+
+.content-title {
+    color: #00134e;
+    text-align: center;
+    letter-spacing: 1px;
+}
+
+
+
+.profile-picture-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.profile-picture {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    animation: pulse 3s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.2);
+    }
+}
+.education-section {
+    max-width: 800px; /* Set the maximum width */
+    margin: auto; /* Center the section horizontally */
+    overflow: hidden; /* Ensure content wraps within the section */
+    padding: 20px; /* Adjust padding */
+    background: linear-gradient(to right, #9dc0fa, #e8dacd); /* Set background gradient */
+    border-radius: 10px; /* Apply border radius */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add box shadow */
+    margin-bottom: 20px; /* Add bottom margin for spacing */
+}
+
+.education-logo {
+    width: 250px;
+    height: 250px; /* Adjust logo size for responsiveness */
+    border-radius: 10px;
+    overflow: hidden; /* Hide overflow content */
+    display: flex; /* Use flexbox to center content */
+    margin-right: 50px;
+    margin-left: 50px;
+    float: left;
+}
+
+    .education-logo img {
+        max-width: 100%; /* Ensure the image fits within the container */
+        max-height: 100%; /* Ensure the image fits within the container */
+        object-fit: cover; /* Maintain aspect ratio and cover the container */
+    }
+
+.education-info {
+    overflow: hidden; /* Ensure info container wraps around content */
+}
+
+@media screen and (max-width: 768px) {
+    .education-section {
+        display: block; /* Change to block layout for smaller screens */
+    }
+
+    .logo-info-container {
+        text-align: center; /* Center align both logo and info on smaller screens */
+        display: block; /* Change to block layout for smaller screens */
+        border-bottom: 1px solid #ccc; /* Ensure border-bottom appears */
+        padding-bottom: 20px; /* Add padding to separate containers */
+    }
+
+    .logo-info-container h3{
+        font-weight: bolder;
+    }
+
+    .education-logo {
+        margin: 0 auto 20px; /* Adjust margin to center and separate containers */
+        float: none; /* Remove float on smaller screens */
+    }
+}
+
+
+
+.left-column {
+    flex: 0 0 30%; /* Adjust the width of the left column */
+}
+
+.right-column {
+    flex: 0 0 65%; /* Adjust the width of the right column */
+}
+
+
+.filter-buttons {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.filter-button {
+    background: linear-gradient(to right, #00134e, #024cb5 ); /* Interstellar Blue */
+    color: #e8dacd;
+    border: none;
+    padding: 10px 20px;
+    margin: 5px;
+    cursor: pointer;
+    border-radius: 20px;
+    transition: background-color 0.3s ease;
+    letter-spacing: 1px;
+}
+
+    .filter-button:hover {
+        background: linear-gradient(to right, #9dc0fa, #e8dacd);
+        color: rgba(0, 19, 78, 0.8); /* Interstellar Blue*/
+    }
+
+.projects {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding: 0 20px;
+}
+
+.project-card {
+    position: relative;
+    width: calc(33% - 40px);
+    background: linear-gradient(135deg, #9dc0fa, #e8dacd);
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, background 0.3s ease;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+    .project-card .card-content {
+        padding: 20px;
+        text-align: center;
+    }
+
+    .project-card .project-logo {
+        width: 100px;
+        height: 100px;
+        margin: 0 auto;
+        overflow: hidden;
+        border-radius: 50%;
+    }
+
+        .project-card .project-logo img {
+            width: 100%;
+            height: auto;
+        }
+
+    .project-card h3 {
+        margin-top: 10px;
+    }
+
+    .project-card p {
+        margin-top: 5px;
+        color: #00134e;
+    }
+
+    .project-card:hover {
+        transform: scale(1.05);
+        color: rgba(0, 19, 78, 0.8); /* Interstellar Blue*/
+    }
+
+    .project-card:hover p{
+        color: #e8dacd;
+        padding: 10px;
+    }
+
+    .project-card .card-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 19, 78, 0.8); /* Interstellar Blue*/
+        color: #e8dacd;
+        padding: 20px;
+        text-align: center;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        overflow-y: auto;
+        margin-left: -20px;
+        margin-right: -10px;
+    }
+
+    .project-card:hover .card-overlay {
+        opacity: 1;
+    }
+
+.project-link {
+    position: relative;
+    display: block;
+    margin: 5px auto 10px; /* Center the button horizontally and move it up */
+    padding: 10px 20px;
+    background: linear-gradient(135deg, #00134e, #024cb5 ); /* Interstellar Blue */
+    color: white;
+    border-radius: 20px;
+    text-decoration: none;
+    text-align: center;
+    z-index: 1;
+    transition: background-color 0.3s ease;
+    width: fit-content;
+}
+
+.project-card:hover .project-link {
+    background: linear-gradient(to right, #9dc0fa, #e8dacd);
+    color: rgba(0, 19, 78, 0.8); /* Interstellar Blue*/
+}
+
+@media (max-width: 768px) {
+    .project-card {
+        width: calc(50% - 40px);
+    }
+}
+
+@media (max-width: 480px) {
+    .project-card {
+        width: 100%;
+    }
+}
+
+.card-overlay-content {
+    max-height: 80vh;
+    overflow-y: auto;
+    padding: 10px;
+    margin-bottom: 40px;
+    display: flex;
+    align-items: center; /* Center vertically */
+    justify-content: center; /* Center horizontally */
+}
+
+.container {
+    max-width: 800px;
+    margin: auto;
+    overflow: hidden;
+    padding: 0 20px;
+    background: linear-gradient(135deg, #9dc0fa, #e8dacd);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+.container2 {
+    max-width: 400px;
+    margin: auto;
+    overflow: hidden;
+    padding: 0 20px;
+    background: linear-gradient(135deg, #9dc0fa, #e8dacd);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.quality {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+    .quality h3 {
+        margin-right: 10px;
+        color: #00134e;
+        flex-basis: 30%;
+    }
+
+    .quality p {
+        margin: 0 20px;
+        flex-basis: 70%; /* adjust the width as needed */
+    }
+
+    .quality img {
+        width: 50px;
+        height: 50px;
+        margin-right: 10px;
+    }
+
+.achievement {
+    margin: 20px 0;
+    padding: 20px;
+}
+
+    .achievement h3 {
+        margin-top: 0;
+        color: #00134e;
+    }
+
+    .achievement p {
+        margin: 10px 0;
+    }
+
+    .achievement .issuer-date {
+        color: #00134e;
+        font-size: 0.9em;
+    }
+
+    .achievement .associated {
+        font-weight: bold;
+        color: #00134e;
+    }
+
+footer {
+    background: linear-gradient(to right, #00134e, #024cb5 ); /* Interstellar Blue */
+    color: #e8dacd; /* Malted Milk */
+    padding: 20px;
+    text-align: center;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    letter-spacing: 1px;
+}
+
+    footer .social-links ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        text-align: center;
+        display: flex;
+        justify-content: center; /* Center align the social links horizontally */
+    }
+
+        footer .social-links ul li {
+            margin-right: 10px;
+        }
+
+            footer .social-links ul li:last-child {
+                margin-right: 0; /* Remove margin from the last item */
+            }
+
+            footer .social-links ul li a {
+                text-decoration: none;
+                display: inline-block;
+                width: 40px; /* Width of the icon container */
+                height: 40px; /* Height of the icon container */
+                border-radius: 20px; /* Make the container round */
+                overflow: hidden; /* Ensure the icon fits within the container */
+                background-color: #e8dacd; /* Malted Milk */
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+                footer .social-links ul li a img {
+                    width: 70%; /* Scale the icon to fit within the container */
+                    height: auto; /* Maintain the aspect ratio */
+                }
+
+    footer p {
+        margin-top: 10px;
+    }
