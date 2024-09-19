@@ -88,28 +88,56 @@ nav ul {
     }
 }
 
-
-.intro-section {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px;
-    margin: 20px;
-    background: linear-gradient(to right, #9dc0fa, #e8dacd);
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-    .intro-section hr {
-        border-bottom-color: #00134e; /* Interstellar Blue */
-        margin-bottom: 15px;
+@media (max-width: 768px {
+    .intro-section {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px;
+        margin: 20px;
+        background: linear-gradient(to right, #9dc0fa, #e8dacd);
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     }
 
-.left-column, .right-column {
-    flex: 1;
-    padding: 20px;
-    box-sizing: border-box; /* Include padding and border in the width */
+        .intro-section hr {
+            border-bottom-color: #00134e; /* Interstellar Blue */
+            margin-bottom: 15px;
+        }
+
+    .left-column, .right-column {
+        flex: 1;
+        padding: 20px;
+        box-sizing: border-box; /* Include padding and border in the width */
+    }
+
+        .left-column h2 {
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .left-column p {
+            text-align: center;
+            font-size: 1.2em;
+            margin-top: 10px;
+            color: #00134e;
+        }
+
+        .right-column h1 {
+            font-size: 3em;
+            color: #00134e;
+            margin: 0;
+            margin-right: 20px;
+        }
+
+        .right-column p {
+            font-size: 1.2em;
+            color: #00134e;
+            margin: 10px 0;
+            margin-right: 20px;
+        }
 }
+
 
 .profile-picture-container {
     display: flex;
@@ -133,31 +161,6 @@ nav ul {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.left-column h2 {
-    text-align: center;
-    margin-top: 10px;
-}
-
-.left-column p {
-    text-align: center;
-    font-size: 1.2em;
-    margin-top: 10px;
-    color: #00134e;
-}
-
-.right-column h1 {
-    font-size: 3em;
-    color: #00134e;
-    margin: 0;
-    margin-right: 20px;
-}
-
-.right-column p {
-    font-size: 1.2em;
-    color: #00134e;
-    margin: 10px 0;
-    margin-right: 20px;
-}
 
 .button-container {
     margin: 20px 0;

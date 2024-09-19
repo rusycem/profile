@@ -33,6 +33,27 @@
                 <hr>
                 <p>Aspiring Game Developer</p>
             </div>
+            <script>
+                // Function to change the layout of intro-section
+                function adjustLayout() {
+                    const introSection = document.querySelector('.intro-section');
+
+                    if (window.innerWidth <= 768) {
+                        // Stack the columns vertically on small screens
+                        introSection.style.flexDirection = 'column';
+                    } else {
+                        // Revert back to row layout on larger screens
+                        introSection.style.flexDirection = 'row';
+                    }
+                }
+
+                // Check layout when the page loads
+                window.addEventListener('load', adjustLayout);
+
+                // Check layout when the window is resized
+                window.addEventListener('resize', adjustLayout);
+            </script>
+
             <div class="right-column">
                 <h1>Hello! I'm Irfan.</h1>
                 <p>Him's who I am & what I do</p>
