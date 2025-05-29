@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", function () {
     var breadcrumb = document.querySelector('.breadcrumb');
     if (breadcrumb) {
         var links = breadcrumb.querySelectorAll('a');
-        if (links.length === 1) {
+        if (links.length === 0) {
             var separator = breadcrumb.querySelector('.separator');
             if (separator) {
                 separator.parentNode.removeChild(separator); // Remove the separator element

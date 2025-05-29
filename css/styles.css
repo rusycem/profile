@@ -193,7 +193,6 @@ nav ul {
     margin: 10px;
     letter-spacing: 1px;
 }
-
 /* Center breadcrumb on small screens */
 @media (max-width: 768px) {
     .breadcrumb {
