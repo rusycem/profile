@@ -23,17 +23,17 @@ function filterProjects(category) {
 }
 
 document.addEventListener("DOMContentLoaded", function () {
-    var elems = document.querySelectorAll('.parallax');
-    var instances = M.Parallax.init(elems);
     var breadcrumb = document.querySelector('.breadcrumb');
-    var links = breadcrumb.querySelectorAll('a');
-
-    const filterButtons = document.querySelectorAll('.filter-button');
-
-    if (links.length === 1) {
-        var separator = breadcrumb.querySelector('.separator');
-        separator.parentNode.removeChild(separator); // Remove the separator element
+    if (breadcrumb) {
+        var links = breadcrumb.querySelectorAll('a');
+        if (links.length === 1) {
+            var separator = breadcrumb.querySelector('.separator');
+            if (separator) {
+                separator.parentNode.removeChild(separator); // Remove the separator element
+            }
+        }
     }
+    const filterButtons = document.querySelectorAll('.filter-button');
 
     filterButtons.forEach(button => {
         button.addEventListener('click', () => {
@@ -61,18 +61,15 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
-    document.querySelector('.dropbtn').addEventListener('click', function () {
-        var dropdownContent = document.querySelector('.dropdown-content');
-        var arrow = document.querySelector('.arrow-down');
+    const dropbtn = document.querySelector('.dropbtn');
+    const dropdownContent = document.querySelector('.dropdown-content');
+    const arrow = document.querySelector('.arrow');
 
-        if (dropdownContent.style.display === 'block') {
-            dropdownContent.style.display = 'none';
-            arrow.classList.remove('arrow-up');
-            arrow.classList.add('arrow-down');
-        } else {
-            dropdownContent.style.display = 'block';
-            arrow.classList.remove('arrow-down');
-            arrow.classList.add('arrow-up');
-        }
-    });
+    if (dropbtn && dropdownContent && arrow) {
+        dropbtn.addEventListener('click', function () {
+            dropdownContent.classList.toggle('open');
+            arrow.classList.toggle('arrow-up');
+            arrow.classList.toggle('arrow-down');
+        });
+    }
 });

@@ -6,18 +6,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home - Muhammad Irfan Rusydi Razaleigh - Home</title>
     <link rel="stylesheet" href="css/styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 </head>
 <body>
     <header>
         <h1>Muhammad Irfan Rusydi Razaleigh</h1>
         <nav>
-            <ul>
-                <li><a href="#">Home</a></li>
+            <button class="dropbtn">
+                Menu
+                <span class="arrow arrow-down"></span>
+            </button>
+            <ul class="dropdown-content">
                 <li><a href="home/personal.html">Personal and contact details</a></li>
-                <li><a href="home/academic.html" onclick="showPage('academic')">Academic history</a></li>
-                <li><a href="home/work.html" onclick="showPage('work')">Work produced/created</a></li>
-                <li><a href="home/qualities.html" onclick="showPage('qualities')">Personal qualities</a></li>
-                <li><a href="home/achievement.html" onclick="showPage('qualities')">Achievements</a></li> 
+                <li><a href="home/academic.html">Academic history</a></li>
+                <li><a href="home/work.html">Work produced</a></li>
+                <li><a href="home/qualities.html">Personal qualities</a></li>
+                <li><a href="home/achievement.html">Achievement</a></li>
             </ul>
         </nav>
     </header>

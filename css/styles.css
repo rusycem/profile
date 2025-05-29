@@ -8,8 +8,9 @@ html, body {
     position: relative; /* Set position relative to allow pseudo-element positioning */
     background-repeat: no-repeat; /* Do not repeat the background image */
     background-position: center center; /* Center the background image */
-    background-attachment: fixed; /*
+    background-attachment: fixed;
     min-height: 100vh; /* Ensure the body takes at least the full viewport height */
+    overflow-x: hidden;
 }
 
     body::before {
@@ -76,6 +77,7 @@ nav ul {
     font-size: 25px;
 
 }
+
 
 /* Center breadcrumb on small screens */
 @media (max-width: 768px) {
@@ -288,13 +290,6 @@ nav ul {
         }
 }
 
-
-/* Media query for small screens */
-@media screen and (max-width: 600px) {
-    nav ul {
-        display: none; /* Hide the regular menu on small screens */
-    }
-}
 
 /* General content styles */
 #content {
@@ -619,6 +614,45 @@ nav ul {
         color: #00134e;
     }
 
+
+/* Desktop: always show nav ul, hide menu button */
+@media (min-width: 601px) {
+    nav {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+            nav ul li {
+                display: flex;
+                align-items: center;
+                margin: 0 10px;
+            }
+
+    .dropbtn, .arrow {
+        display: none !important;
+    }
+
+    .dropdown-content {
+        display: flex !important;
+        position: static;
+        flex-direction: row;
+        background: none;
+        border-radius: 0;
+        width: auto;
+    }
+
+        .dropdown-content li {
+            width: auto;
+        }
+}
+
 footer {
     background: linear-gradient(to right, #00134e, #024cb5 ); /* Interstellar Blue */
     color: #e8dacd; /* Malted Milk */
@@ -627,6 +661,9 @@ footer {
     position: relative;
     bottom: 0;
     width: 100%;
+    max-width: 100vw;
+    box-sizing: border-box;
+    overflow-x: hidden;
     letter-spacing: 1px;
 }
 
@@ -666,5 +703,102 @@ footer {
                 }
 
     footer p {
-        margin-top: 10px;
+        word-break: break-word;
+        overflow-wrap: break-word;
+        white-space: normal;
+        max-width: 100vw;
+        box-sizing: border-box;
+        margin: 10px auto 0 auto;
+        padding: 0 10px;
     }
+
+
+
+@media (max-width: 600px) {
+    .dropdown-content {
+        display: none !important;
+        flex-direction: column;
+        background: linear-gradient(135deg, #00134e, #024cb5);
+        border-radius: 0 0 10px 10px;
+        width: 100%;
+        position: static;
+        margin: 0;
+        padding: 0;
+        z-index: 100;
+    }
+
+        .dropdown-content.open {
+            display: flex !important;
+        }
+}
+
+@media (max-width: 600px) {
+    nav {
+        position: relative;
+    }
+
+    .dropbtn {
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        background: linear-gradient(135deg, #00134e, #024cb5);
+        color: #e8dacd;
+        border: none;
+        padding: 15px;
+        font-size: 18px;
+        cursor: pointer;
+        border-radius: 10px 10px 0 0;
+    }
+
+    .arrow {
+        display: inline-block;
+        margin-left: 10px;
+        border: solid #e8dacd;
+        border-width: 0 3px 3px 0;
+        padding: 4px;
+        transition: transform 0.3s;
+    }
+
+    .arrow-down {
+        transform: rotate(45deg);
+    }
+
+    .arrow-up {
+        transform: rotate(-135deg);
+    }
+
+    .dropdown-content {
+        display: none;
+        flex-direction: column;
+        background: linear-gradient(135deg, #00134e, #024cb5);
+        border-radius: 0 0 10px 10px;
+        width: 100%;
+        position: static;
+        margin: 0;
+        padding: 0;
+        z-index: 100;
+    }
+
+        .dropdown-content.open {
+            display: flex !important;
+        }
+
+        .dropdown-content li {
+            width: 100%;
+            text-align: center;
+            margin: 0;
+        }
+
+            .dropdown-content li a {
+                display: block;
+                padding: 12px 0;
+                color: #e8dacd;
+                text-decoration: none;
+            }
+
+                .dropdown-content li a:hover {
+                    background: #024cb5;
+                }
+}
