@@ -72,4 +72,37 @@ document.addEventListener("DOMContentLoaded", function () {
             arrow.classList.toggle('arrow-down');
         });
     }
+
+    const modal = document.getElementById('projectModal');
+    const modalTitle = document.getElementById('modalTitle');
+    const modalDescription = document.getElementById('modalDescription');
+    const modalImages = document.getElementById('modalImages');
+    const modalTech = document.getElementById('modalTech');
+    const modalSkills = document.getElementById('modalSkills');
+    const closeBtn = document.querySelector('.close-btn');
+
+    // When a project card is clicked
+    document.querySelectorAll('.project-card').forEach(card => {
+        card.addEventListener('click', () => {
+            // You can store these details as data attributes in HTML
+            modalTitle.textContent = card.querySelector('h3').textContent;
+            modalDescription.textContent = card.querySelector('.card-overlay p').textContent;
+
+            // Example: Load extra images from data-images attribute
+            const images = card.getAttribute('data-images')?.split(',') || [];
+            modalImages.innerHTML = images.map(src => `<img src="${src}" alt="">`).join('');
+
+            // Example: Tech & skills from inner HTML
+            modalTech.textContent = card.querySelector('.card-overlay strong:nth-of-type(1)').nextSibling.textContent.trim();
+            modalSkills.textContent = card.querySelector('.card-overlay strong:nth-of-type(2)').nextSibling.textContent.trim();
+
+            modal.style.display = 'block';
+        });
+    });
+
+     // Close modal
+    closeBtn.addEventListener('click', () => modal.style.display = 'none');
+    window.addEventListener('click', (e) => {
+        if (e.target === modal) modal.style.display = 'none';
+    });
 });
