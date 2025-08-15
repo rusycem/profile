@@ -35,6 +35,9 @@ document.addEventListener("DOMContentLoaded", function () {
     const modalLink = document.getElementById('modal-link');
 
      // Open modal on card click
+    // Only add modal functionality if modal exists
+if (modal && closeBtn) {
+    // Open modal on card click
     projectCards.forEach(card => {
         card.addEventListener('click', () => {
             modal.style.display = "block";
@@ -44,11 +47,8 @@ document.addEventListener("DOMContentLoaded", function () {
             modalSkills.textContent = card.getAttribute('data-skills');
             modalImage.src = card.getAttribute('data-image');
 
-            // Get the original project link from the card
             const cardLink = card.querySelector('.project-link');
-            if (cardLink) {
-                modalLink.href = cardLink.href;
-            }
+            if (cardLink) modalLink.href = cardLink.href;
         });
     });
 
@@ -63,6 +63,8 @@ document.addEventListener("DOMContentLoaded", function () {
             modal.style.display = "none";
         }
     });
+}
+
 
 
 
@@ -78,16 +80,17 @@ document.addEventListener("DOMContentLoaded", function () {
     }
     const filterButtons = document.querySelectorAll('.filter-button');
 
+    if (filterButtons.length > 0) {
     filterButtons.forEach(button => {
         button.addEventListener('click', () => {
             const filter = button.getAttribute('data-filter');
             filterProjects(filter);
 
-            // Toggle active class for filter buttons
             filterButtons.forEach(btn => btn.classList.remove('active'));
             button.classList.add('active');
         });
     });
+}
 
 
     const dropbtn = document.querySelector('.dropbtn');
