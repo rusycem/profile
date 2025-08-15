@@ -706,6 +706,31 @@ nav ul {
         }
 }
 
+.social-links ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 10px; /* space between icons */
+    justify-content: center; /* center them under the profile */
+}
+
+.social-links li {
+    display: inline-block;
+}
+
+.social-links img {
+    width: 28px;  /* control icon size */
+    height: 28px; /* keeps them square */
+    object-fit: contain;
+    transition: transform 0.2s ease;
+}
+
+.social-links img:hover {
+    transform: scale(1.1); /* small zoom on hover */
+}
+
+
 footer {
     background: linear-gradient(to right, #00134e, #024cb5 ); /* Interstellar Blue */
     color: #e8dacd; /* Malted Milk */
