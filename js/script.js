@@ -23,6 +23,49 @@ function filterProjects(category) {
 }
 
 document.addEventListener("DOMContentLoaded", function () {
+    const projectCards = document.querySelectorAll('.project-card');
+    const modal = document.getElementById('project-modal');
+    const closeBtn = document.querySelector('.close-btn');
+
+    const modalTitle = document.getElementById('modal-title');
+    const modalDescription = document.getElementById('modal-description');
+    const modalTechnologies = document.getElementById('modal-technologies');
+    const modalSkills = document.getElementById('modal-skills');
+    const modalImage = document.getElementById('modal-image');
+    const modalLink = document.getElementById('modal-link');
+
+     // Open modal on card click
+    projectCards.forEach(card => {
+        card.addEventListener('click', () => {
+            modal.style.display = "block";
+            modalTitle.textContent = card.getAttribute('data-title');
+            modalDescription.textContent = card.getAttribute('data-description');
+            modalTechnologies.textContent = card.getAttribute('data-technologies');
+            modalSkills.textContent = card.getAttribute('data-skills');
+            modalImage.src = card.getAttribute('data-image');
+
+            // Get the original project link from the card
+            const cardLink = card.querySelector('.project-link');
+            if (cardLink) {
+                modalLink.href = cardLink.href;
+            }
+        });
+    });
+
+    // Close modal
+    closeBtn.addEventListener('click', () => {
+        modal.style.display = "none";
+    });
+
+    // Close if clicked outside modal
+    window.addEventListener('click', (event) => {
+        if (event.target === modal) {
+            modal.style.display = "none";
+        }
+    });
+
+
+
     var breadcrumb = document.querySelector('.breadcrumb');
     if (breadcrumb) {
         var links = breadcrumb.querySelectorAll('a');
@@ -46,20 +89,6 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
-    const projectCards = document.querySelectorAll('.project-card');
-    projectCards.forEach(card => {
-        card.addEventListener('click', () => {
-            const overlay = card.querySelector('.card-overlay');
-            overlay.style.opacity = 1;
-            overlay.style.visibility = 'visible';
-        });
-
-        card.querySelector('.card-overlay').addEventListener('click', (event) => {
-            event.stopPropagation();
-            event.currentTarget.style.opacity = 0;
-            event.currentTarget.style.visibility = 'hidden';
-        });
-    });
 
     const dropbtn = document.querySelector('.dropbtn');
     const dropdownContent = document.querySelector('.dropdown-content');
@@ -72,37 +101,4 @@ document.addEventListener("DOMContentLoaded", function () {
             arrow.classList.toggle('arrow-down');
         });
     }
-
-    const modal = document.getElementById('projectModal');
-    const modalTitle = document.getElementById('modalTitle');
-    const modalDescription = document.getElementById('modalDescription');
-    const modalImages = document.getElementById('modalImages');
-    const modalTech = document.getElementById('modalTech');
-    const modalSkills = document.getElementById('modalSkills');
-    const closeBtn = document.querySelector('.close-btn');
-
-    // When a project card is clicked
-    document.querySelectorAll('.project-card').forEach(card => {
-        card.addEventListener('click', () => {
-            // You can store these details as data attributes in HTML
-            modalTitle.textContent = card.querySelector('h3').textContent;
-            modalDescription.textContent = card.querySelector('.card-overlay p').textContent;
-
-            // Example: Load extra images from data-images attribute
-            const images = card.getAttribute('data-images')?.split(',') || [];
-            modalImages.innerHTML = images.map(src => `<img src="${src}" alt="">`).join('');
-
-            // Example: Tech & skills from inner HTML
-            modalTech.textContent = card.querySelector('.card-overlay strong:nth-of-type(1)').nextSibling.textContent.trim();
-            modalSkills.textContent = card.querySelector('.card-overlay strong:nth-of-type(2)').nextSibling.textContent.trim();
-
-            modal.style.display = 'block';
-        });
-    });
-
-     // Close modal
-    closeBtn.addEventListener('click', () => modal.style.display = 'none');
-    window.addEventListener('click', (e) => {
-        if (e.target === modal) modal.style.display = 'none';
-    });
 });

@@ -34,141 +34,223 @@
             <h2 style="text-align:center;">Work Produced/Created</h2>
             <hr />
             <div class="filter-buttons">
-        <button class="filter-button" data-filter="all">All</button>
-        <button class="filter-button" data-filter="game">Game</button>
-        <button class="filter-button" data-filter="wiki">Wiki</button>
-        <button class="filter-button" data-filter="ar filter">AR Filter</button>
+            <button class="filter-button" data-filter="all">All</button>
+            <button class="filter-button" data-filter="game">Game</button>
+            <button class="filter-button" data-filter="wiki">Wiki</button>
+            <button class="filter-button" data-filter="ar-filter">AR Filter</button>
             </div>
 
         </div>
         <div class="projects">
-            <!-- Project Cards -->
-            <div class="project-card" data-category="game">
-                <div class="card-content">
-                    <div class="project-logo">
-                        <img src="../images/icon/bubgirls.png" alt="BubGirls">
-                    </div>
-                    <h3>BubGirls</h3>
-                    <p>3D Isometric game developed using Unreal Engine</p><br />
-                    <p>Jan 2025 - Jan 2025</p>
+            <!-- The modal (one for all cards) -->
+            <div id="project-modal" class="modal">
+                <div class="modal-content">
+                    <span class="close-btn">&times;</span>
+                    <img id="modal-image" src="" alt="">
+                    <h3 id="modal-title"></h3>
+                    <p id="modal-description"></p>
+                    <p><strong>Technologies used:</strong> <span id="modal-technologies"></span></p>
+                    <p><strong>Skills:</strong> <span id="modal-skills"></span></p>
+                    <a id="modal-link" class="project-link" href="#" target="_blank">Open</a>
                 </div>
-
-                <div class="card-overlay">
-                    <h3>BubGirls</h3>
-                    <p>3D Isometric mobile game developed using Unreal Engine 5 for Global Game Jam 2025 Submission. Can Minnie escaped and turn-back normal?</p>
-                    <p><strong>Technologies used:</strong> Unreal Engine 5, Blender, Mixamo
-                    <p><strong>Skills:</strong> Blueprint, Team Coordination, Game Development</p>
-                </div>
-                <a class="project-link" href="https://rusycem.itch.io/bubgirls">Open</a>
             </div>
 
-            <div class="project-card" data-category="game">
-                <div class="card-content">
-                    <div class="project-logo">
-                        <img src="../images/icon/cyber_ninja.jpg" alt="Cyber Ninja">
-                    </div>
-                    <h3>Cyber Ninja</h3>
-                    <p>3D Isometric Action Platformer game developed using Unreal Engine</p><br />
-                    <p>Nov 2024 - Dec 2024</p>
+            <!-- CARDS) -->
+
+            <!-- FYP -->
+            <div class="project-card"
+                data-category="game"
+                data-title="Dynamic AI-Driven NPCs with Real-Time Adaptive Conversations in UE5"
+                data-description="This project integrates local AI text generation (via Ollama) with real-time voice synthesis (NVIDIA Riva TTS) inside Unreal Engine. The pipeline starts with user text input, which is processed by Ollama to generate a dynamic response. This response is passed to a Python script (talk.py) that sends it to NVIDIA Riva TTS for speech synthesis, returning a .wav audio file. The Unreal Engine C++/Blueprint system then loads the audio, attaches it to a character’s Audio Component, and triggers Audio2Face facial animation for lip-sync. This setup enables fully automated AI-driven characters that can both speak and animate in real time."
+                data-technologies="Ollama – Local LLM for text generation.
+
+NVIDIA Riva TTS – Real-time text-to-speech synthesis.
+
+Python – TTS handling via Riva client scripts.
+
+C++ (Unreal Engine) – Integration, audio loading, and playback.
+
+Unreal Engine Blueprints – Actor control, animation triggering.
+
+NVIDIA Audio2Face (A2F) – Facial animation driven by audio."
+                data-skills="AI & LLM integration in game engines.
+
+REST/gRPC API communication.
+
+Python–C++ interoperability.
+
+Unreal Engine audio pipeline management.
+
+Real-time lip-sync and facial animation.
+
+Debugging multi-language, multi-platform systems."
+                data-image="../images/icon/dynamicai0.png"
+                tabindex="0" role="button" aria-label="Open details for Dynamic AI-Driven NPCs with Real-Time Adaptive Conversations in UE5">
+
+            <div class="card-content">
+                <div class="project-logo">
+                <img src="../images/icon/dynamicai0.PNG" alt="Dynamic AI-Driven NPCs with Real-Time Adaptive Conversations in UE5" loading="lazy">
                 </div>
-                <div class="card-overlay">
-                    <h3>Cyber Ninja</h3>
-                    <p>3D Isometric Action Platformer game developed using Unreal Engine, developed by 4-men team. Save the world from evil AI-Corp</p>
-                    <p><strong>Technologies used:</strong> Unreal Engine 5, Blender, Mixamo
-                    <p><strong>Skills:</strong> AI Behavior Tree, Blend Tree, Game Development</p>
-                </div>
-                <a class="project-link" href="https://rusycem.itch.io/cyber-ninja">Open</a>
+                <h3>Dynamic AI-Driven NPCs with Real-Time Adaptive Conversations in UE5</h3>
+                <p>Local AI text generation (via Ollama) with real-time voice synthesis (NVIDIA Riva TTS) inside Unreal Engine.</p>
+                <p>June 2025 - Aug 2025</p>
             </div>
 
-            <div class="project-card" data-category="game">
-                <div class="card-content">
-                    <div class="project-logo">
-                        <img src="../images/icon/sarah.png" alt="Sarah's Little Adventure">
-                    </div>
-                    <h3>Sarah's Little Adventure</h3>
-                    <p>2D Platformer mobile game developed using GDevelop</p><br />
-                    <p>Oct 2023 - Oct 2023</p>
-                </div>
-                <div class="card-overlay">
-                    <h3>Sarah's Little Adventure</h3>
-                    <p>2D Platformer mobile game developed using GDevelop during DBP Gamethon 2023, published on Google Play Store for production track. Embark on the journey of wild fauna to help a lost kitten find its mom.</p>
-                    <p><strong>Technologies used:</strong> GDevelop</p>
-                    <p><strong>Skills:</strong> Monetization, Game Design, Mobile Game Development</p>
-                </div>
-                <a class="project-link" href="https://play.google.com/store/apps/details?id=com.rusycem.sarahadventure&hl=en">Open</a>
-            </div>
-            <!-- Repeat similar structure for other projects -->
-            <div class="project-card" data-category="ar filter">
-                <div class="card-content">
-                    <div class="project-logo">
-                        <img src="../images/icon/ar-effect.png" alt="Sea Monster AR Filter">
-                    </div>
-                    <h3>Sea Monster AR Filter</h3>
-                    <p>Stylized filter on Tiktok for party and self-expression</p><br />
-                    <p>November 2023 - November 2023</p>
-                </div>
-                <div class="card-overlay">
-                    <h3>Sea Monster AR Filter</h3>
-                    <p>Developed using Tiktok House Effect, a powerful tool for creating and designing filters on Tiktok platform.</p>
-                    <p><strong>Technologies used:</strong> Tiktok Effect House, Photoshop</p>
-                    <p><strong>Skills:</strong>AR Filter Development, Design</p>
-                </div>
-                <a class="project-link" href="https://vm.tiktok.com/ZMrRR3Wb2/">Open</a>
+            <a class="project-link"
+                href="https://rusycem.itch.io/bubgirls"
+                target="_blank" rel="noopener noreferrer">Open</a>
             </div>
 
-            <div class="project-card" data-category="wiki">
-                <div class="card-content">
-                    <div class="project-logo">
-                        <img src="../images/icon/agentsarena.png" alt="Ejen Ali: Agents' Arena Wiki">
-                    </div>
-                    <h3>Ejen Ali: Agents' Arena Wiki</h3>
-                    <p>Fandom Page for video game Ejen Ali: Agents' Arena for community</p><br />
-                    <p>Jul 2022 - Dec 2022</p>
+            <!-- Bub Girls -->
+            <div class="project-card"
+                data-category="game"
+                data-title="BubGirls"
+                data-description="3D Isometric mobile game developed using Unreal Engine 5 for Global Game Jam 2025 Submission. Can Minnie escape and turn back normal?"
+                data-technologies="Unreal Engine 5, Blender, Mixamo"
+                data-skills="Blueprint, Team Coordination, Game Development"
+                data-image="../images/icon/bubgirls.png"
+                tabindex="0" role="button" aria-label="Open details for BubGirls">
+
+            <div class="card-content">
+                <div class="project-logo">
+                <img src="../images/icon/bubgirls.png" alt="BubGirls" loading="lazy">
                 </div>
-                <div class="card-overlay">
-                    <h3>Ejen Ali: Agents' Arena Wiki</h3>
-                    <p>Developing the community wiki for Ejen Ali: Agent's Arena video game on Play Store or App Store, including all playable character pages, roles, stats comparison, list of gears, and other terminology.</p>
-                    <p><strong>Technologies used:</strong> Wikitext</p>
-                    <p><strong>Skills:</strong> Wiki Development</p>
-                </div>
-                <a class="project-link" href="https://ejen-ali-agents-arena.fandom.com/wiki/Ejen_Ali:_Agents%27_Arena_Wiki" target="_blank">Open</a>
+                <h3>BubGirls</h3>
+                <p>3D Isometric game developed using Unreal Engine</p>
+                <p>Jan 2025 - Jan 2025</p>
             </div>
 
-            <div class="project-card" data-category="game">
-                <div class="card-content">
-                    <div class="project-logo">
-                        <img src="../images/icon/cdu.png" alt="Legasi">
-                    </div>
-                    <h3>Legasi</h3>
-                    <p>3D Action video game, a gamification of Malay-cultured Penchak Silat and Empu’s Blacksmithing</p><br />
-                    <p>Mar 2022 - Jun 2022</p>
-                </div>
-                <div class="card-overlay">
-                    <h3>Legasi – A Gamification of Malay-cultured Penchak Silat and Empu’s Blacksmithing</h3>
-                    <p>Developed during Creations de UiTM 2022, an indie 3rd person action video game with the theme of Malay cultured martial art, Penchak Silat as the base game design. Exploring the culture of the Javanese martial art along with the art of Malay-blacksmithing of Empu, in the settings of Malacca world.</p>
-                    <p><strong>Technologies used:</strong> Unity, Blender</p>
-                    <p><strong>Skills:</strong> Problem Solving, Game Development</p>
-                </div>
-                <a class="project-link" href="https://creations.uitm.edu.my/?event_listing=cdu2022_c027-legasi-a-gamification-of-malay-cultured-penchak-silat-and-empus-blacksmithing">Open</a>
+            <a class="project-link"
+                href="https://rusycem.itch.io/bubgirls"
+                target="_blank" rel="noopener noreferrer">Open</a>
             </div>
 
-            <div class="project-card" data-category="game">
-                <div class="card-content">
-                    <div class="project-logo">
-                        <img src="../images/icon/fastbook.png" alt="Fastbook">
-                    </div>
-                    <h3>Fastbook</h3>
-                    <p>A Socially Conscious Game In Identifying Scam Product on Social Media</p><br />
-                    <p>May 2022 - May 2022</p>
+            <!-- Cyber Ninja -->
+            <div class="project-card"
+                data-category="game"
+                data-title="Cyber Ninja"
+                data-description="3D Isometric Action Platformer game developed using Unreal Engine, developed by a 4-man team. Save the world from evil AI-Corp."
+                data-technologies="Unreal Engine 5, Blender, Mixamo"
+                data-skills="AI Behavior Tree, Blend Tree, Game Development"
+                data-image="../images/icon/cyber_ninja.jpg"
+                data-link="https://rusycem.itch.io/cyber-ninja"
+                tabindex="0" role="button" aria-label="Open details for Cyber Ninja">
+            <div class="card-content">
+                <div class="project-logo">
+                <img src="../images/icon/cyber_ninja.jpg" alt="Cyber Ninja" loading="lazy">
                 </div>
-                <div class="card-overlay">
-                    <h3>Fastbook – A Socially Conscious Video Game of Identifying Scam Product on Social Media</h3>
-                    <p>During Games Bagus, a game jam organized by Biji Biji Initiative, our team developed Fastbook, a socially conscious indie video game aimed to spread awareness on fraudulent ads via engaging game mechanics.</p>
-                    <p><strong>Technologies used:</strong> Godot</p>
-                    <p><strong>Skills:</strong> Teamwork, Leadership, Problem Solving, Game Development</p>
-                </div>
-                <a class="project-link" href="https://redcocoon.itch.io/fastbook">Open</a>
+                <h3>Cyber Ninja</h3>
+                <p>3D Isometric Action Platformer game developed using Unreal Engine</p>
+                <p>Nov 2024 - Dec 2024</p>
             </div>
+            <a class="project-link" href="https://rusycem.itch.io/cyber-ninja" target="_blank" rel="noopener noreferrer">Open</a>
+            </div>
+
+            <!-- Sarah's Little Adventure -->
+            <div class="project-card"
+                data-category="game"
+                data-title="Sarah's Little Adventure"
+                data-description="2D Platformer mobile game developed using GDevelop during DBP Gamethon 2023. Embark on the journey of wild fauna to help a lost kitten find its mom."
+                data-technologies="GDevelop"
+                data-skills="Monetization, Game Design, Mobile Game Development"
+                data-image="../images/icon/sarah.png"
+                data-link="https://play.google.com/store/apps/details?id=com.rusycem.sarahadventure&hl=en"
+                tabindex="0" role="button" aria-label="Open details for Sarah's Little Adventure">
+            <div class="card-content">
+                <div class="project-logo">
+                <img src="../images/icon/sarah.png" alt="Sarah's Little Adventure" loading="lazy">
+                </div>
+                <h3>Sarah's Little Adventure</h3>
+                <p>2D Platformer mobile game developed using GDevelop</p>
+                <p>Oct 2023 - Oct 2023</p>
+            </div>
+            <a class="project-link" href="https://play.google.com/store/apps/details?id=com.rusycem.sarahadventure&hl=en" target="_blank" rel="noopener noreferrer">Open</a>
+            </div>
+
+            <!-- Sea Monster AR Filter -->
+            <div class="project-card"
+                data-category="ar filter"
+                data-title="Sea Monster AR Filter"
+                data-description="Stylized filter developed with TikTok Effect House for party and self-expression."
+                data-technologies="TikTok Effect House, Photoshop"
+                data-skills="AR Filter Development, Design"
+                data-image="../images/icon/ar-effect.png"
+                data-link="https://vm.tiktok.com/ZMrRR3Wb2/"
+                tabindex="0" role="button" aria-label="Open details for Sea Monster AR Filter">
+            <div class="card-content">
+                <div class="project-logo">
+                <img src="../images/icon/ar-effect.png" alt="Sea Monster AR Filter" loading="lazy">
+                </div>
+                <h3>Sea Monster AR Filter</h3>
+                <p>Stylized filter on TikTok for party and self-expression</p>
+                <p>November 2023 - November 2023</p>
+            </div>
+            <a class="project-link" href="https://vm.tiktok.com/ZMrRR3Wb2/" target="_blank" rel="noopener noreferrer">Open</a>
+            </div>
+
+            <!-- Ejen Ali: Agents' Arena Wiki -->
+            <div class="project-card"
+                data-category="wiki"
+                data-title="Ejen Ali: Agents' Arena Wiki"
+                data-description="Community wiki for Ejen Ali: Agents' Arena — character pages, roles, stats comparisons, gears, and terminology."
+                data-technologies="Wikitext"
+                data-skills="Wiki Development"
+                data-image="../images/icon/agentsarena.png"
+                data-link="https://ejen-ali-agents-arena.fandom.com/wiki/Ejen_Ali:_Agents%27_Arena_Wiki"
+                tabindex="0" role="button" aria-label="Open details for Ejen Ali: Agents' Arena Wiki">
+            <div class="card-content">
+                <div class="project-logo">
+                <img src="../images/icon/agentsarena.png" alt="Ejen Ali: Agents' Arena Wiki" loading="lazy">
+                </div>
+                <h3>Ejen Ali: Agents' Arena Wiki</h3>
+                <p>Fandom page for the community of Ejen Ali: Agents' Arena</p>
+                <p>Jul 2022 - Dec 2022</p>
+            </div>
+            <a class="project-link" href="https://ejen-ali-agents-arena.fandom.com/wiki/Ejen_Ali:_Agents%27_Arena_Wiki" target="_blank" rel="noopener noreferrer">Open</a>
+            </div>
+
+            <!-- Legasi -->
+            <div class="project-card"
+                data-category="game"
+                data-title="Legasi"
+                data-description="3D action game gamifying Malay-cultured Penchak Silat and Empu’s blacksmithing. Developed during Creations de UiTM 2022."
+                data-technologies="Unity, Blender"
+                data-skills="Problem Solving, Game Development"
+                data-image="../images/icon/cdu.png"
+                data-link="https://creations.uitm.edu.my/?event_listing=cdu2022_c027-legasi-a-gamification-of-malay-cultured-penchak-silat-and-empus-blacksmithing"
+                tabindex="0" role="button" aria-label="Open details for Legasi">
+            <div class="card-content">
+                <div class="project-logo">
+                <img src="../images/icon/cdu.png" alt="Legasi" loading="lazy">
+                </div>
+                <h3>Legasi</h3>
+                <p>3D Action video game inspired by Penchak Silat and Empu’s blacksmithing</p>
+                <p>Mar 2022 - Jun 2022</p>
+            </div>
+            <a class="project-link" href="https://creations.uitm.edu.my/?event_listing=cdu2022_c027-legasi-a-gamification-of-malay-cultured-penchak-silat-and-empus-blacksmithing" target="_blank" rel="noopener noreferrer">Open</a>
+            </div>
+
+            <!-- Fastbook -->
+            <div class="project-card"
+                data-category="game"
+                data-title="Fastbook"
+                data-description="A socially conscious game to help players identify scam products on social media. Developed during Games Bagus jam."
+                data-technologies="Godot"
+                data-skills="Teamwork, Leadership, Problem Solving, Game Development"
+                data-image="../images/icon/fastbook.png"
+                data-link="https://redcocoon.itch.io/fastbook"
+                tabindex="0" role="button" aria-label="Open details for Fastbook">
+            <div class="card-content">
+                <div class="project-logo">
+                <img src="../images/icon/fastbook.png" alt="Fastbook" loading="lazy">
+                </div>
+                <h3>Fastbook</h3>
+                <p>A socially conscious game identifying scam products on social media</p>
+                <p>May 2022 - May 2022</p>
+            </div>
+            <a class="project-link" href="https://redcocoon.itch.io/fastbook" target="_blank" rel="noopener noreferrer">Open</a>
+            </div>
+
         </div>
     </div>
     <footer>
