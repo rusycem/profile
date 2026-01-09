@@ -823,7 +823,7 @@ footer {
     }
 
     .dropbtn {
-        font-family: 'Gill Sans', 'Gill Sans MT', Calibri;
+        font-family: 'Gill Sans MT', 'Gill Sans', Calibri;
         display: flex;
         align-items: center;
         justify-content: center;
