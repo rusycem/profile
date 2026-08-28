@@ -16,11 +16,11 @@ body {
 }
 
 a {
-    color: #569cd6;
+    color: #dcdcaa;
     text-decoration: none;
 }
 a:hover {
-    color: #9cdcfe;
+    color: #dcdcaa;
 }
 
 /* Engine Top Bar */
@@ -225,7 +225,7 @@ hr {
     width: 150px;
     height: 150px;
     border-radius: 5px; /* Square/rounded for engine look instead of circle */
-    border: 2px solid #569cd6;
+    border: 2px solid #dcdcaa;
 }
 
 .intro-text h1 {
@@ -269,7 +269,7 @@ hr {
     flex-direction: column;
 }
 .project-card:hover {
-    border-color: #569cd6;
+    border-color: #dcdcaa;
     transform: translateY(-2px);
 }
 
@@ -309,7 +309,7 @@ hr {
 
 .project-card .project-link { display: none !important; }
 .project-card .project-link:hover {
-    background-color: #1177bb;
+    background-color: #dcdcaa;
 }
 
 /* Tech/Monospace Tags */
@@ -341,17 +341,17 @@ hr {
 .image-grid img:hover {
     transform: scale(1.05) translateY(-5px);
     box-shadow: 0 10px 20px rgba(0,0,0,0.6);
-    border-color: #569cd6;
+    border-color: #dcdcaa;
     z-index: 2;
     position: relative;
 }
 
 /* Buttons */
 .rounded-button {
-    background-color: #0e639c;
+    background-color: #ce9178;
     color: #ffffff;
     padding: 8px 16px;
-    border: 1px solid #1177bb;
+    border: 1px solid #ce9178;
     border-radius: 3px;
     display: inline-block;
     cursor: pointer;
@@ -359,14 +359,14 @@ hr {
     text-align: center;
 }
 .rounded-button:hover {
-    background-color: #1177bb;
-    color: #ffffff;
+    background-color: #dcdcaa;
+    color: #666;
 }
 
 /* Footer (Status Bar) */
 .engine-statusbar {
     height: 25px;
-    background-color: #007acc; /* VSCode Blue status bar */
+    background-color: #ce9178; /* VSCode Blue status bar */
     color: #ffffff;
     display: flex;
     align-items: center;
