@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <link rel="icon" href="../images/icon/favicon.webp" type="image/x-icon" />
@@ -41,370 +41,371 @@
             
             <div class="viewport-content">
                 <h2>Asset Browser: Projects</h2>
-                <div style="margin-bottom: 20px;">
+                <div style="margin-bottom: 20px; display: flex; flex-wrap: wrap; gap: 10px;">
                     <button class="rounded-button filter-button" data-filter="all">All Assets</button>
                     <button class="rounded-button filter-button" data-filter="game">Games</button>
                     <button class="rounded-button filter-button" data-filter="webdev">Web Dev</button>
                     <button class="rounded-button filter-button" data-filter="Others">Others</button>
                 </div>
 
-        <div class="projects">
-            <!-- The modal (one for all cards) -->
-            <div id="project-modal" class="modal">
-                <div class="modal-content">
-                    <span class="close-btn">&times;</span>
-                    <img id="modal-image" src="" alt="">
-                    <h3 id="modal-title"></h3>
-                    <p id="modal-description"></p>
-                    <p><strong>Technologies used:</strong> <span id="modal-technologies"></span></p>
-                    <p><strong>Skills:</strong> <span id="modal-skills"></span></p>
-                    <a id="modal-link" class="project-link" href=" " target="_blank">Open</a>
-                </div>
-            </div>
-
-            <!-- CARDS) -->
-            <!-- CTRM Factory Digital Twin (VR) -->
-            <div class="project-card"
-                data-category="Others"
-                data-title="CTRM Factory Digital Twin (VR)"
-                data-description="VR-based digital twin of CTRM’s aerospace factory for immersive training, visualization, and TVET/STEM learning. Built in Unreal Engine as an academia–industry collaboration. Discussed: 19 June 2025 — collaboration UTeM &amp; CTRM Sdn. Bhd."
-                data-technologies="Unreal Engine, VR, 3D Modeling"
-                data-skills="Digital Twin, VR Development, Simulation, Industry–Academia Collaboration"
-                data-image="../images/icon/ctrm.webp"
-                data-link="#"
-                tabindex="0" role="button" aria-label="Open details for CTRM Factory Digital Twin (VR)">
-
-            <div class="card-content">
-                <div class="project-logo">
-                <img src="../images/icon/ctrm.webp" alt="CTRM Factory Digital Twin" loading="lazy">
-                </div>
-                <h3>Establishment Of CTRM Factory Digital Twin Through Virtual Reality Experience</h3>
-                <p>Immersive VR replica of an aerospace factory for training, visualization, and Industry 4.0 research. collaboration UTeM &amp; CTRM Sdn. Bhd.</p>
-                <p>Aug 2025 - Dec 2025</p>
-            </div>
-
-            <a class="project-link" href="https://www.linkedin.com/posts/muhammad-irfan-rusydi-razaleigh_unrealengine-vr-mixedreality-ugcPost-7444643142286610435-N9iq?utm_source=share&utm_medium=member_desktop&rcm=ACoAADq0ECMBmtVizkSsQdGQsLiy-WI_hNUYIt0" target="_blank" rel="noopener noreferrer">Open</a>
-
-            </div>
-
-
-            <!-- FYP -->
-            <div class="project-card"
-                data-category="game"
-                data-title="Dynamic AI-Driven NPCs with Real-Time Adaptive Conversations in UE5"
-                data-description="This project integrates local AI text generation (via Ollama) with real-time voice synthesis (NVIDIA NeMo TTS) inside Unreal Engine. The pipeline starts with user text input, which is processed by Ollama to generate a dynamic response. This response is passed to a Python script (talk.py) that sends it to NVIDIA NeMo TTS for speech synthesis, returning a .wav audio file. The Unreal Engine C++/Blueprint system then loads the audio, attaches it to a character’s Audio Component, and triggers Audio2Face facial animation for lip-sync. This setup enables fully automated AI-driven characters that can both speak and animate in real time."
-                data-technologies="Ollama – Local LLM for text generation.
-
-NVIDIA NeMo TTS – Real-time text-to-speech synthesis.
-
-Python – TTS handling via NeMo python scripts.
-
-C++ (Unreal Engine) – Integration, audio loading, and playback.
-
-Unreal Engine Blueprints – Actor control, animation triggering.
-
-NVIDIA Audio2Face (A2F) – Facial animation driven by audio."
-                data-skills="AI & LLM integration in game engines.
-
-REST/gRPC API communication.
-
-Python–C++ interoperability.
-
-Unreal Engine audio pipeline management.
-
-Real-time lip-sync and facial animation.
-
-Debugging multi-language, multi-platform systems."
-                data-image="../images/icon/dynamicai0.webp"
-                tabindex="0" role="button" aria-label="Open details for Dynamic AI-Driven NPCs with Real-Time Adaptive Conversations in UE5">
-
-            <div class="card-content">
-                <div class="project-logo">
-                <img src="../images/icon/dynamicai0.webp" alt="Dynamic AI-Driven NPCs with Real-Time Adaptive Conversations in UE5" loading="lazy">
-                </div>
-                <h3>Dynamic AI-Driven NPCs with Real-Time Adaptive Conversations in UE5</h3>
-                <p>Local AI text generation (via Ollama) with real-time voice synthesis (NVIDIA NeMo TTS) inside Unreal Engine</p>
-                <p>June 2025 - Aug 2025</p>
-            </div>
-
-            <a class="project-link"
-                href="https://github.com/rusycem/Dynamic-AI-NPCs-NeMollama-Unreal#"
-                target="_blank" rel="noopener noreferrer">Open</a>
-            </div>
-
-            <!-- Motion -->
-            <div class="project-card" 
-                data-category="Others"
-                data-title="Motion Graphics – Self Intro Snippet"
-                data-description="Who am I, where am I headed?” – A short visual experiment that blends tech and storytelling. This Motion Graphics assignment explored kinetic typography, 3D tracking, and cinematic camera work using Unreal Engine 5 and Adobe After Effects. 
-                
-                Workflow Breakdown:
-                - Built scene and camera movement using UE5 spline animation.
-                - Exported footage to After Effects, applied 3D Camera Tracker, and integrated 3D kinetic typography.
-                - Added greenscreen transitions for smooth scene bridging.
-                
-                This project combined real-time visuals with motion design in one pipeline."
-                data-technologies="Unreal Engine 5, Adobe After Effects, 3D Camera Tracker, Kinetic Typography"
-                data-skills="Motion Graphics, Real-Time Rendering, Cinematic Design, Video Editing"
-                data-image="../images/icon/motion00.webp"
-                data-link="https://www.youtube.com/watch?v=wTu0OwgcIGk"
-                tabindex="0" role="button" aria-label="Open details for Motion Graphics – Self Intro Snippet">
-
-                <div class="card-content">
-                    <div class="project-logo">
-                        <img src="../images/icon/motion00.webp" alt="Motion Graphics Self Intro Snippet" loading="lazy">
+                <div class="projects">
+                    <!-- The modal (one for all cards) -->
+                    <div id="project-modal" class="modal">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h3 id="modal-title"></h3>
+                                <span class="close-btn">&times;</span>
+                            </div>
+                            <div class="modal-body">
+                                <img id="modal-image" src="" alt="">
+                                <p id="modal-description"></p>
+                                <hr/>
+                                <p><strong>Technologies:</strong> <span id="modal-technologies" class="tech-tag"></span></p>
+                                <p><strong>Skills:</strong> <span id="modal-skills" class="tech-tag"></span></p>
+                                <div style="margin-top: 20px; text-align: right;">
+                                    <a id="modal-link" class="rounded-button" style="background-color: #007acc; text-decoration: none;" href=" " target="_blank">Launch Project 🚀</a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <h3>Motion Graphics – Self Intro Snippet</h3>
-                    <p>Kinetic Typography & 3D Tracking</p>
-                    <p>Blending tech & storytelling with Unreal Engine 5 and After Effects.</p>
-                    <p>July 2025</p>
-                </div>
-                <a class="project-link" href="https://www.youtube.com/watch?v=wTu0OwgcIGk" target="_blank">Open</a>
-            </div>
 
-            <!-- Hellbound Heir -->
-            <div class="project-card" 
-                data-category="game"
-                data-title="Hellbound Heir"
-                data-description="A third-person action-adventure game where players battle through melee and ranged combat to defeat the dark overlord, Lord Savadar. Features fluid movement, adaptive enemy AI using Blackboard & Behavior Trees, cinematic cutscenes, and challenging missions."
-                data-technologies="Unreal Engine, Mixamo, AI Blackboard, Behavior Trees, Diversion (Version Control)"
-                data-skills="Game Development, AI Programming, Combat Design, Cinematics"
-                data-image="../images/icon/hh00.webp">
+                    <!-- CARDS) -->
+                    <!-- CTRM Factory Digital Twin (VR) -->
+                    <div class="project-card"
+                        data-category="Others"
+                        data-title="CTRM Factory Digital Twin (VR)"
+                        data-description="VR-based digital twin of CTRM’s aerospace factory for immersive training, visualization, and TVET/STEM learning. Built in Unreal Engine as an academia–industry collaboration. Discussed: 19 June 2025 — collaboration UTeM &amp; CTRM Sdn. Bhd."
+                        data-technologies="Unreal Engine, VR, 3D Modeling"
+                        data-skills="Digital Twin, VR Development, Simulation, Industry–Academia Collaboration"
+                        data-image="../images/icon/ctrm.webp"
+                        data-link="#"
+                        tabindex="0" role="button" aria-label="Open details for CTRM Factory Digital Twin (VR)">
 
-                <div class="card-content">
-                    <div class="project-logo">
-                    <img src="../images/icon/hh00.webp" alt="Hellbound Heir"  loading="lazy">
+                            <div class="card-content">
+                                <div class="project-logo">
+                                <img src="../images/icon/ctrm.webp" alt="CTRM Factory Digital Twin" loading="lazy">
+                                </div>
+                                <h3>Establishment Of CTRM Factory Digital Twin Through Virtual Reality Experience</h3>
+                                <p>Immersive VR replica of an aerospace factory for training, visualization, and Industry 4.0 research. collaboration UTeM &amp; CTRM Sdn. Bhd.</p>
+                                <p>Aug 2025 - Dec 2025</p>
+                            </div>
+
+                        <a class="project-link" href="https://www.linkedin.com/posts/muhammad-irfan-rusydi-razaleigh_unrealengine-vr-mixedreality-ugcPost-7444643142286610435-N9iq?utm_source=share&utm_medium=member_desktop&rcm=ACoAADq0ECMBmtVizkSsQdGQsLiy-WI_hNUYIt0" target="_blank" rel="noopener noreferrer">Open</a>
                     </div>
-                    <h3>Hellbound Heir</h3>
-                    <p>Third-person action-adventure medieval fantasy game</p>
-                    <p>Unreal Engine with AI & cinematics</p>
-                    <p>Jul 2025</p>
-                </div>
-                <a class="project-link" href="https://rusycem.itch.io/hellbound-heir">Open</a>
-            </div>
 
 
-              <!-- Virtualizer -->
-            <div class="project-card" 
-                data-category="webdev"
-                data-title="Perlin Noise Visualization with Three.js and Audio Controls"
-                data-description="A web application that visualizes Perlin noise using a vertex shader in Three.js. The application includes interactive controls for playing and pausing an audio track, reloading the audio, and adjusting various visual parameters such as colors and bloom effects. The project demonstrates the use of Three.js for 3D graphics, shaders for visual effects, and dat.GUI for user interface controls. 
-                Submission for the GitHub Copilot Challenge: Transitions and Transformations."
-                data-technologies="Three.js, dat.GUI, Shaders, GitHub Copilot"
-                data-skills="Web Development, Shader Programming, Interactive UI, AI-assisted Development"
-                data-image="../images/icon/perlin-noise.webp">
+                    <!-- FYP -->
+                    <div class="project-card"
+                        data-category="game"
+                        data-title="Dynamic AI-Driven NPCs with Real-Time Adaptive Conversations in UE5"
+                        data-description="This project integrates local AI text generation (via Ollama) with real-time voice synthesis (NVIDIA NeMo TTS) inside Unreal Engine. The pipeline starts with user text input, which is processed by Ollama to generate a dynamic response. This response is passed to a Python script (talk.py) that sends it to NVIDIA NeMo TTS for speech synthesis, returning a .wav audio file. The Unreal Engine C++/Blueprint system then loads the audio, attaches it to a character’s Audio Component, and triggers Audio2Face facial animation for lip-sync. This setup enables fully automated AI-driven characters that can both speak and animate in real time."
+                        data-technologies="Ollama – Local LLM for text generation.
 
-                <div class="card-content">
-                    <div class="project-logo">
-                    <img src="../images/icon/perlin-noise.webp" alt="Perlin Noise Visualization" loading="lazy">
+                        NVIDIA NeMo TTS – Real-time text-to-speech synthesis.
+
+                        Python – TTS handling via NeMo python scripts.
+
+                        C++ (Unreal Engine) – Integration, audio loading, and playback.
+
+                        Unreal Engine Blueprints – Actor control, animation triggering.
+
+                        NVIDIA Audio2Face (A2F) – Facial animation driven by audio."
+                        data-skills="AI & LLM integration in game engines.
+
+                        REST/gRPC API communication.
+
+                        Python–C++ interoperability.
+
+                        Unreal Engine audio pipeline management.
+
+                        Real-time lip-sync and facial animation.
+
+                        Debugging multi-language, multi-platform systems."
+                        data-image="../images/icon/dynamicai0.webp"
+                        tabindex="0" role="button" aria-label="Open details for Dynamic AI-Driven NPCs with Real-Time Adaptive Conversations in UE5">
+
+                        <div class="card-content">
+                            <div class="project-logo">
+                            <img src="../images/icon/dynamicai0.webp" alt="Dynamic AI-Driven NPCs with Real-Time Adaptive Conversations in UE5" loading="lazy">
+                            </div>
+                            <h3>Dynamic AI-Driven NPCs with Real-Time Adaptive Conversations in UE5</h3>
+                            <p>Local AI text generation (via Ollama) with real-time voice synthesis (NVIDIA NeMo TTS) inside Unreal Engine</p>
+                            <p>June 2025 - Aug 2025</p>
+                        </div>
+
+                        <a class="project-link" href="https://github.com/rusycem/Dynamic-AI-NPCs-NeMollama-Unreal#" target="_blank" rel="noopener noreferrer">Open</a>
                     </div>
-                    <h3>Perlin Noise Visualization</h3>
-                    <p>Web app visualizing Perlin noise with audio controls</p>
-                    <p>Submission for the GitHub Copilot Challenge: Transitions and Transformations</p>
-                    <p>Jan 2025</p>
-                </div>
-                <a class="project-link" href="https://dev.to/rusycem/perlin-noise-visualization-with-threejs-and-audio-controls-55pb">Open</a>
-            </div>
 
-            <!-- Bub Girls -->
-            <div class="project-card"
-                data-category="game"
-                data-title="BubGirls"
-                data-description="3D Isometric mobile game developed using Unreal Engine 5 for Global Game Jam 2025 Submission. Can Minnie escape and turn back normal?"
-                data-technologies="Unreal Engine 5, Blender, Mixamo"
-                data-skills="Blueprint, Team Coordination, Game Development"
-                data-image="../images/icon/bubgirls.webp"
-                tabindex="0" role="button" aria-label="Open details for BubGirls">
+                    <!-- Motion -->
+                    <div class="project-card" 
+                        data-category="Others"
+                        data-title="Motion Graphics – Self Intro Snippet"
+                        data-description="Who am I, where am I headed?” – A short visual experiment that blends tech and storytelling. This Motion Graphics assignment explored kinetic typography, 3D tracking, and cinematic camera work using Unreal Engine 5 and Adobe After Effects. 
+                        
+                        Workflow Breakdown:
+                        - Built scene and camera movement using UE5 spline animation.
+                        - Exported footage to After Effects, applied 3D Camera Tracker, and integrated 3D kinetic typography.
+                        - Added greenscreen transitions for smooth scene bridging.
+                        
+                        This project combined real-time visuals with motion design in one pipeline."
+                        data-technologies="Unreal Engine 5, Adobe After Effects, 3D Camera Tracker, Kinetic Typography"
+                        data-skills="Motion Graphics, Real-Time Rendering, Cinematic Design, Video Editing"
+                        data-image="../images/icon/motion00.webp"
+                        data-link="https://www.youtube.com/watch?v=wTu0OwgcIGk"
+                        tabindex="0" role="button" aria-label="Open details for Motion Graphics – Self Intro Snippet">
 
-            <div class="card-content">
-                <div class="project-logo">
-                <img src="../images/icon/bubgirls.webp" alt="BubGirls" loading="lazy">
-                </div>
-                <h3>BubGirls</h3>
-                <p>3D Isometric adventure game with minigame developed using Unreal Engine</p>
-                <p>Submission for the Global Game Jam 2025</p>
-                <p>Jan 2025</p>
-            </div>
-
-            <a class="project-link"
-                href="https://rusycem.itch.io/bubgirls"
-                target="_blank" rel="noopener noreferrer">Open</a>
-            </div>
-
-            <!-- Cyber Ninja -->
-            <div class="project-card"
-                data-category="game"
-                data-title="Cyber Ninja"
-                data-description="3D Isometric Action Platformer game developed using Unreal Engine, developed by a 4-man team. Save the world from evil AI-Corp."
-                data-technologies="Unreal Engine 5, Blender, Mixamo"
-                data-skills="AI Behavior Tree, Blend Tree, Game Development"
-                data-image="../images/icon/cyber_ninja.webp"
-                data-link="https://rusycem.itch.io/cyber-ninja"
-                tabindex="0" role="button" aria-label="Open details for Cyber Ninja">
-            <div class="card-content">
-                <div class="project-logo">
-                <img src="../images/icon/cyber_ninja.webp" alt="Cyber Ninja" loading="lazy">
-                </div>
-                <h3>Cyber Ninja</h3>
-                <p>3D Isometric Action Platformer game developed using Unreal Engine</p>
-                <p>Nov 2024 - Dec 2024</p>
-            </div>
-            <a class="project-link" href="https://rusycem.itch.io/cyber-ninja" target="_blank" rel="noopener noreferrer">Open</a>
-            </div>
-
-            <!-- Rara and Riri -->
-            <div class="project-card"
-                data-category="game"
-                data-title="Pengembaraan Jawi bersama Rara dan Riri"
-                data-description="3D Unity adventure game built in 48 hours for DBP Multimedia Application Development Competition 2024. Combines exploration with Jawi learning challenges."
-                data-technologies="Unity, 3D Game Development"
-                data-skills="Game Programming, UI Design, 3D Modeling, Educational Games"
-                data-image="../images/icon/rara-riri-logo.webp"
-                data-link="https://rusycem.itch.io/pengembaraan-jawi-bersama-rara-riri"
-                tabindex="0" role="button" aria-label="Open details for Pengembaraan Jawi bersama Rara dan Riri">
-
-            <div class="card-content">
-                <div class="project-logo">
-                <img src="../images/icon/rara-riri-logo.webp" alt="Pengembaraan Jawi bersama Rara dan Riri" loading="lazy">
-                </div>
-                <h3>Pengembaraan Jawi bersama Rara & Riri</h3>
-                <p>3D Unity adventure game built in 48 hours for DBP 2024 — exploration with Jawi language challenges.</p>
-                <p>Nov 2024</p>
-            </div>
-
-            <a class="project-link" href="https://rusycem.itch.io/pengembaraan-jawi-bersama-rara-riri" target="_blank" rel="noopener noreferrer">Open</a>
-            </div>
-
-
-            <!-- Black Jack -->
-            <div class="project-card" 
-                data-category="game"
-                data-title="C++/SFML Blackjack"
-                data-description="A single-player digital adaptation of the classic casino blackjack game, developed in C++ with SFML. Built for educational and tutorial purposes, featuring music from Interstellar Arabic Ambient Remix. Inspired by Silvian Achim's original SFML Blackjack project."
-                data-technologies="C++, SFML, Visual Studio 2022"
-                data-skills="Game Development, C++ Programming, SFML"
-                data-image="../images/icon/blackjack.webp">
-
-                <div class="card-content">
-                    <div class="project-logo">
-                        <img src="../images/icon/blackjack.webp" alt="C++/SFML Blackjack">
+                        <div class="card-content">
+                            <div class="project-logo">
+                                <img src="../images/icon/motion00.webp" alt="Motion Graphics Self Intro Snippet" loading="lazy">
+                            </div>
+                            <h3>Motion Graphics – Self Intro Snippet</h3>
+                            <p>Kinetic Typography & 3D Tracking</p>
+                            <p>Blending tech & storytelling with Unreal Engine 5 and After Effects.</p>
+                            <p>July 2025</p>
+                        </div>
+                        <a class="project-link" href="https://www.youtube.com/watch?v=wTu0OwgcIGk" target="_blank">Open</a>
                     </div>
-                    <h3>C++/SFML Blackjack</h3>
-                    <p>Single-player digital blackjack game using C++ & Simple and Fast Multimedia Library (SFML)</p>
-                    <p></p>
-                    <p>Jul 2023</p>
-                </div>
-                <a class="project-link" href="https://github.com/rusycem/BITE1513_G11_SFML_Blackjack">Open</a>
-            </div>
 
-             <!-- Sarah's Little Adventure -->
-            <div class="project-card"
-                data-category="game"
-                data-title="Sarah's Little Adventure"
-                data-description="2D Platformer mobile game developed using GDevelop during DBP Gamethon 2023. Embark on the journey of wild fauna to help a lost kitten find its mom. Available on Google Play Store."
-                data-technologies="GDevelop, Google Play Console"
-                data-skills="Monetization, Game Design, Mobile Game Development"
-                data-image="../images/icon/sarah.webp"
-                data-link="https://play.google.com/store/apps/details?id=com.rusycem.sarahadventure&hl=en"
-                tabindex="0" role="button" aria-label="Open details for Sarah's Little Adventure">
-            <div class="card-content">
-                <div class="project-logo">
-                <img src="../images/icon/sarah.webp" alt="Sarah's Little Adventure" loading="lazy">
-                </div>
-                <h3>Sarah's Little Adventure</h3>
-                <p>2D Platformer mobile game using GDevelop. Available on Google Play Store.</p>
-                <p>Oct 2023 - Oct 2023</p>
-            </div>
-            <a class="project-link" href="https://play.google.com/store/apps/details?id=com.rusycem.sarahadventure&hl=en" target="_blank" rel="noopener noreferrer">Open</a>
-            </div>
+                    <!-- Hellbound Heir -->
+                    <div class="project-card" 
+                        data-category="game"
+                        data-title="Hellbound Heir"
+                        data-description="A third-person action-adventure game where players battle through melee and ranged combat to defeat the dark overlord, Lord Savadar. Features fluid movement, adaptive enemy AI using Blackboard & Behavior Trees, cinematic cutscenes, and challenging missions."
+                        data-technologies="Unreal Engine, Mixamo, AI Blackboard, Behavior Trees, Diversion (Version Control)"
+                        data-skills="Game Development, AI Programming, Combat Design, Cinematics"
+                        data-image="../images/icon/hh00.webp">
 
-            <!-- Legasi -->
-            <div class="project-card"
-                data-category="game"
-                data-title="Legasi"
-                data-description="3D action game gamifying Malay-cultured Penchak Silat and Empu’s blacksmithing. Developed during Creations de UiTM 2022."
-                data-technologies="Unity, Blender"
-                data-skills="Problem Solving, Game Development"
-                data-image="../images/icon/cdu.webp"
-                data-link="https://creations.uitm.edu.my/?event_listing=cdu2022_c027-legasi-a-gamification-of-malay-cultured-penchak-silat-and-empus-blacksmithing"
-                tabindex="0" role="button" aria-label="Open details for Legasi">
-            <div class="card-content">
-                <div class="project-logo">
-                <img src="../images/icon/cdu.webp" alt="Legasi" loading="lazy">
-                </div>
-                <h3>Legasi</h3>
-                <p>3D Action video game inspired by Penchak Silat and Empu’s blacksmithing</p>
-                <p>Mar 2022 - Jun 2022</p>
-            </div>
-            <a class="project-link" href="https://creations.uitm.edu.my/?event_listing=cdu2022_c027-legasi-a-gamification-of-malay-cultured-penchak-silat-and-empus-blacksmithing" target="_blank" rel="noopener noreferrer">Open</a>
-            </div>
+                        <div class="card-content">
+                            <div class="project-logo">
+                            <img src="../images/icon/hh00.webp" alt="Hellbound Heir"  loading="lazy">
+                            </div>
+                            <h3>Hellbound Heir</h3>
+                            <p>Third-person action-adventure medieval fantasy game</p>
+                            <p>Unreal Engine with AI & cinematics</p>
+                            <p>Jul 2025</p>
+                        </div>
+                        <a class="project-link" href="https://rusycem.itch.io/hellbound-heir">Open</a>
+                    </div>
 
-            <!-- Fastbook -->
-            <div class="project-card"
-                data-category="game"
-                data-title="Fastbook"
-                data-description="A socially conscious game to help players identify scam products on social media. Developed during Games Bagus jam."
-                data-technologies="Godot"
-                data-skills="Teamwork, Leadership, Problem Solving, Game Development"
-                data-image="../images/icon/fastbook.webp"
-                data-link="https://redcocoon.itch.io/fastbook"
-                tabindex="0" role="button" aria-label="Open details for Fastbook">
-            <div class="card-content">
-                <div class="project-logo">
-                <img src="../images/icon/fastbook.webp" alt="Fastbook" loading="lazy">
-                </div>
-                <h3>Fastbook</h3>
-                <p>A socially conscious game identifying scam products on social media</p>
-                <p>May 2022 - May 2022</p>
-            </div>
-            <a class="project-link" href="https://redcocoon.itch.io/fastbook" target="_blank" rel="noopener noreferrer">Open</a>
-            </div>
 
-               <!-- Ejen Ali: Agents' Arena Wiki -->
-            <div class="project-card"
-                data-category="webdev"
-                data-title="Ejen Ali: Agents' Arena Wiki"
-                data-description="Community wiki for Ejen Ali: Agents' Arena — character pages, roles, stats comparisons, gears, and terminology."
-                data-technologies="Wikitext"
-                data-skills="Wiki Development"
-                data-image="../images/icon/agentsarena.webp"
-                data-link="https://ejen-ali-agents-arena.fandom.com/wiki/Ejen_Ali:_Agents%27_Arena_Wiki"
-                tabindex="0" role="button" aria-label="Open details for Ejen Ali: Agents' Arena Wiki">
-            <div class="card-content">
-                <div class="project-logo">
-                <img src="../images/icon/agentsarena.webp" alt="Ejen Ali: Agents' Arena Wiki" loading="lazy">
-                </div>
-                <h3>Ejen Ali: Agents' Arena Wiki</h3>
-                <p>Fandom page for the community of Ejen Ali: Agents' Arena</p>
-                <p>Jul 2022 - Dec 2022</p>
-            </div>
-            <a class="project-link" href="https://ejen-ali-agents-arena.fandom.com/wiki/Ejen_Ali:_Agents%27_Arena_Wiki" target="_blank" rel="noopener noreferrer">Open</a>
-            </div>
+                    <!-- Virtualizer -->
+                    <div class="project-card" 
+                        data-category="webdev"
+                        data-title="Perlin Noise Visualization with Three.js and Audio Controls"
+                        data-description="A web application that visualizes Perlin noise using a vertex shader in Three.js. The application includes interactive controls for playing and pausing an audio track, reloading the audio, and adjusting various visual parameters such as colors and bloom effects. The project demonstrates the use of Three.js for 3D graphics, shaders for visual effects, and dat.GUI for user interface controls. 
+                        Submission for the GitHub Copilot Challenge: Transitions and Transformations."
+                        data-technologies="Three.js, dat.GUI, Shaders, GitHub Copilot"
+                        data-skills="Web Development, Shader Programming, Interactive UI, AI-assisted Development"
+                        data-image="../images/icon/perlin-noise.webp">
 
+                        <div class="card-content">
+                            <div class="project-logo">
+                            <img src="../images/icon/perlin-noise.webp" alt="Perlin Noise Visualization" loading="lazy">
+                            </div>
+                            <h3>Perlin Noise Visualization</h3>
+                            <p>Web app visualizing Perlin noise with audio controls</p>
+                            <p>Submission for the GitHub Copilot Challenge: Transitions and Transformations</p>
+                            <p>Jan 2025</p>
+                        </div>
+                        <a class="project-link" href="https://dev.to/rusycem/perlin-noise-visualization-with-threejs-and-audio-controls-55pb">Open</a>
+                    </div>
+
+                    <!-- Bub Girls -->
+                    <div class="project-card"
+                        data-category="game"
+                        data-title="BubGirls"
+                        data-description="3D Isometric mobile game developed using Unreal Engine 5 for Global Game Jam 2025 Submission. Can Minnie escape and turn back normal?"
+                        data-technologies="Unreal Engine 5, Blender, Mixamo"
+                        data-skills="Blueprint, Team Coordination, Game Development"
+                        data-image="../images/icon/bubgirls.webp"
+                        tabindex="0" role="button" aria-label="Open details for BubGirls">
+
+                    <div class="card-content">
+                        <div class="project-logo">
+                        <img src="../images/icon/bubgirls.webp" alt="BubGirls" loading="lazy">
+                        </div>
+                        <h3>BubGirls</h3>
+                        <p>3D Isometric adventure game with minigame developed using Unreal Engine</p>
+                        <p>Submission for the Global Game Jam 2025</p>
+                        <p>Jan 2025</p>
+                    </div>
+
+                    <a class="project-link"
+                        href="https://rusycem.itch.io/bubgirls"
+                        target="_blank" rel="noopener noreferrer">Open</a>
+                    </div>
+
+                    <!-- Cyber Ninja -->
+                    <div class="project-card"
+                        data-category="game"
+                        data-title="Cyber Ninja"
+                        data-description="3D Isometric Action Platformer game developed using Unreal Engine, developed by a 4-man team. Save the world from evil AI-Corp."
+                        data-technologies="Unreal Engine 5, Blender, Mixamo"
+                        data-skills="AI Behavior Tree, Blend Tree, Game Development"
+                        data-image="../images/icon/cyber_ninja.webp"
+                        data-link="https://rusycem.itch.io/cyber-ninja"
+                        tabindex="0" role="button" aria-label="Open details for Cyber Ninja">
+                        <div class="card-content">
+                            <div class="project-logo">
+                            <img src="../images/icon/cyber_ninja.webp" alt="Cyber Ninja" loading="lazy">
+                            </div>
+                            <h3>Cyber Ninja</h3>
+                            <p>3D Isometric Action Platformer game developed using Unreal Engine</p>
+                            <p>Nov 2024 - Dec 2024</p>
+                        </div>
+                    <a class="project-link" href="https://rusycem.itch.io/cyber-ninja" target="_blank" rel="noopener noreferrer">Open</a>
+                    </div>
+
+                    <!-- Rara and Riri -->
+                    <div class="project-card"
+                        data-category="game"
+                        data-title="Pengembaraan Jawi bersama Rara dan Riri"
+                        data-description="3D Unity adventure game built in 48 hours for DBP Multimedia Application Development Competition 2024. Combines exploration with Jawi learning challenges."
+                        data-technologies="Unity, 3D Game Development"
+                        data-skills="Game Programming, UI Design, 3D Modeling, Educational Games"
+                        data-image="../images/icon/rara-riri-logo.webp"
+                        data-link="https://rusycem.itch.io/pengembaraan-jawi-bersama-rara-riri"
+                        tabindex="0" role="button" aria-label="Open details for Pengembaraan Jawi bersama Rara dan Riri">
+
+                    <div class="card-content">
+                        <div class="project-logo">
+                        <img src="../images/icon/rara-riri-logo.webp" alt="Pengembaraan Jawi bersama Rara dan Riri" loading="lazy">
+                        </div>
+                        <h3>Pengembaraan Jawi bersama Rara & Riri</h3>
+                        <p>3D Unity adventure game built in 48 hours for DBP 2024 — exploration with Jawi language challenges.</p>
+                        <p>Nov 2024</p>
+                    </div>
+
+                    <a class="project-link" href="https://rusycem.itch.io/pengembaraan-jawi-bersama-rara-riri" target="_blank" rel="noopener noreferrer">Open</a>
+                    </div>
+
+
+                    <!-- Black Jack -->
+                    <div class="project-card" 
+                        data-category="game"
+                        data-title="C++/SFML Blackjack"
+                        data-description="A single-player digital adaptation of the classic casino blackjack game, developed in C++ with SFML. Built for educational and tutorial purposes, featuring music from Interstellar Arabic Ambient Remix. Inspired by Silvian Achim's original SFML Blackjack project."
+                        data-technologies="C++, SFML, Visual Studio 2022"
+                        data-skills="Game Development, C++ Programming, SFML"
+                        data-image="../images/icon/blackjack.webp">
+
+                        <div class="card-content">
+                            <div class="project-logo">
+                                <img src="../images/icon/blackjack.webp" alt="C++/SFML Blackjack">
+                            </div>
+                            <h3>C++/SFML Blackjack</h3>
+                            <p>Single-player digital blackjack game using C++ & Simple and Fast Multimedia Library (SFML)</p>
+                            <p></p>
+                            <p>Jul 2023</p>
+                        </div>
+                        <a class="project-link" href="https://github.com/rusycem/BITE1513_G11_SFML_Blackjack">Open</a>
+                    </div>
+
+                    <!-- Sarah's Little Adventure -->
+                    <div class="project-card"
+                        data-category="game"
+                        data-title="Sarah's Little Adventure"
+                        data-description="2D Platformer mobile game developed using GDevelop during DBP Gamethon 2023. Embark on the journey of wild fauna to help a lost kitten find its mom. Available on Google Play Store."
+                        data-technologies="GDevelop, Google Play Console"
+                        data-skills="Monetization, Game Design, Mobile Game Development"
+                        data-image="../images/icon/sarah.webp"
+                        data-link="https://play.google.com/store/apps/details?id=com.rusycem.sarahadventure&hl=en"
+                        tabindex="0" role="button" aria-label="Open details for Sarah's Little Adventure">
+                    <div class="card-content">
+                        <div class="project-logo">
+                        <img src="../images/icon/sarah.webp" alt="Sarah's Little Adventure" loading="lazy">
+                        </div>
+                        <h3>Sarah's Little Adventure</h3>
+                        <p>2D Platformer mobile game using GDevelop. Available on Google Play Store.</p>
+                        <p>Oct 2023 - Oct 2023</p>
+                    </div>
+                    <a class="project-link" href="https://play.google.com/store/apps/details?id=com.rusycem.sarahadventure&hl=en" target="_blank" rel="noopener noreferrer">Open</a>
+                    </div>
+
+                    <!-- Legasi -->
+                    <div class="project-card"
+                        data-category="game"
+                        data-title="Legasi"
+                        data-description="3D action game gamifying Malay-cultured Penchak Silat and Empu’s blacksmithing. Developed during Creations de UiTM 2022."
+                        data-technologies="Unity, Blender"
+                        data-skills="Problem Solving, Game Development"
+                        data-image="../images/icon/cdu.webp"
+                        data-link="https://creations.uitm.edu.my/?event_listing=cdu2022_c027-legasi-a-gamification-of-malay-cultured-penchak-silat-and-empus-blacksmithing"
+                        tabindex="0" role="button" aria-label="Open details for Legasi">
+                    <div class="card-content">
+                        <div class="project-logo">
+                        <img src="../images/icon/cdu.webp" alt="Legasi" loading="lazy">
+                        </div>
+                        <h3>Legasi</h3>
+                        <p>3D Action video game inspired by Penchak Silat and Empu’s blacksmithing</p>
+                        <p>Mar 2022 - Jun 2022</p>
+                    </div>
+                    <a class="project-link" href="https://creations.uitm.edu.my/?event_listing=cdu2022_c027-legasi-a-gamification-of-malay-cultured-penchak-silat-and-empus-blacksmithing" target="_blank" rel="noopener noreferrer">Open</a>
+                    </div>
+
+                    <!-- Fastbook -->
+                    <div class="project-card"
+                        data-category="game"
+                        data-title="Fastbook"
+                        data-description="A socially conscious game to help players identify scam products on social media. Developed during Games Bagus jam."
+                        data-technologies="Godot"
+                        data-skills="Teamwork, Leadership, Problem Solving, Game Development"
+                        data-image="../images/icon/fastbook.webp"
+                        data-link="https://redcocoon.itch.io/fastbook"
+                        tabindex="0" role="button" aria-label="Open details for Fastbook">
+                    <div class="card-content">
+                        <div class="project-logo">
+                        <img src="../images/icon/fastbook.webp" alt="Fastbook" loading="lazy">
+                        </div>
+                        <h3>Fastbook</h3>
+                        <p>A socially conscious game identifying scam products on social media</p>
+                        <p>May 2022 - May 2022</p>
+                    </div>
+                    <a class="project-link" href="https://redcocoon.itch.io/fastbook" target="_blank" rel="noopener noreferrer">Open</a>
+                    </div>
+
+                <!-- Ejen Ali: Agents' Arena Wiki -->
+                    <div class="project-card"
+                        data-category="webdev"
+                        data-title="Ejen Ali: Agents' Arena Wiki"
+                        data-description="Community wiki for Ejen Ali: Agents' Arena — character pages, roles, stats comparisons, gears, and terminology."
+                        data-technologies="Wikitext"
+                        data-skills="Wiki Development"
+                        data-image="../images/icon/agentsarena.webp"
+                        data-link="https://ejen-ali-agents-arena.fandom.com/wiki/Ejen_Ali:_Agents%27_Arena_Wiki"
+                        tabindex="0" role="button" aria-label="Open details for Ejen Ali: Agents' Arena Wiki">
+                        <div class="card-content">
+                            <div class="project-logo">
+                            <img src="../images/icon/agentsarena.webp" alt="Ejen Ali: Agents' Arena Wiki" loading="lazy">
+                            </div>
+                            <h3>Ejen Ali: Agents' Arena Wiki</h3>
+                            <p>Fandom page for the community of Ejen Ali: Agents' Arena</p>
+                            <p>Jul 2022 - Dec 2022</p>
+                        </div>
+                    <a class="project-link" href="https://ejen-ali-agents-arena.fandom.com/wiki/Ejen_Ali:_Agents%27_Arena_Wiki" target="_blank" rel="noopener noreferrer">Open</a>
+                    </div>
+
+                </div>
+            </div>
+            <div class="engine-statusbar">
+                    <span>Ready</span>
+                    <span>&copy; 2025 Muhammad Irfan Rusydi Razaleigh</span>
+            </div>
         </div>
     </div>
-
-        </div>
-    </div>
-    <div class="engine-statusbar">
-        <span>Ready</span>
-        <span>&copy; 2025 Muhammad Irfan Rusydi Razaleigh</span>
-    </div>
-</div>
-</div>
-<script>
-    function filterProjects(category) {
-        const projectCards = document.querySelectorAll('.project-card');
-        projectCards.forEach(card => {
-            const cardCategory = card.getAttribute('data-category');
-            if (category === 'all' || cardCategory === category) {
-                card.style.display = 'block';
-            } else {
-                card.style.display = 'none';
-            }
-        });
-    }
-</script>
-<script src="../js/script.js"></script>
+    <script>
+        function filterProjects(category) {
+            const projectCards = document.querySelectorAll('.project-card');
+            projectCards.forEach(card => {
+                const cardCategory = card.getAttribute('data-category');
+                if (category === 'all' || cardCategory === category) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+    </script>
+    <script src="../js/script.js"></script>
 </body>
 </html>

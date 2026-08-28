@@ -36,11 +36,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
      // Open modal on card click
     // Only add modal functionality if modal exists
-if (modal && closeBtn) {
-    // Open modal on card click
-    projectCards.forEach(card => {
-        card.addEventListener('click', () => {
-            modal.style.display = "block";
+    if (modal && closeBtn) {
+        // Open modal on card click
+        projectCards.forEach(card => {
+            card.addEventListener('click', () => {
+                modal.style.display = "flex";
             modalTitle.textContent = card.getAttribute('data-title');
             modalDescription.textContent = card.getAttribute('data-description');
             modalTechnologies.textContent = card.getAttribute('data-technologies');

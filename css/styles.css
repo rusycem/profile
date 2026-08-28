@@ -29,6 +29,7 @@ a:hover {
     background-color: #333333;
     display: flex;
     align-items: center;
+    justify-content: space-between;
     padding: 0 10px;
     font-size: 13px;
     border-bottom: 1px solid #1e1e1e;
@@ -38,6 +39,8 @@ a:hover {
 .engine-topbar-menus {
     display: flex;
     gap: 15px;
+    flex: 1;
+    overflow: hidden;
 }
 .engine-topbar-menus span {
     cursor: default;
@@ -46,8 +49,11 @@ a:hover {
     color: #ffffff;
 }
 .engine-topbar-title {
-    margin: 0 auto; /* Center title */
     color: #999999;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-left: 15px;
 }
 
 /* Main Editor Layout */
@@ -157,6 +163,11 @@ a:hover {
     margin: 0 auto;
     width: 100%;
     flex: 1;
+    animation: fadeUp 0.4s ease-out;
+}
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 h1, h2, h3, h4 {
@@ -247,6 +258,8 @@ hr {
     transition: border-color 0.2s, transform 0.2s;
     overflow: hidden;
     position: relative;
+    display: flex;
+    flex-direction: column;
 }
 .project-card:hover {
     border-color: #569cd6;
@@ -270,16 +283,26 @@ hr {
 
 .card-content {
     padding: 15px;
+    display: flex;
+    flex-direction: column;
+    flex: 1; /* To push button to bottom if we keep it */
 }
 .card-content h3 {
     font-size: 16px;
-    margin: 0 0 5px 0;
-    color: #4ec9b0; /* VSCode class color */
+    margin: 0 0 10px 0;
+    color: #ffffff; /* Was green */
+    line-height: 1.3;
 }
 .card-content p {
     font-size: 13px;
-    color: #9cdcfe;
+    color: #cccccc; /* Was blue */
     margin: 0;
+    flex: 1;
+}
+
+.project-card .project-link { display: none !important; }
+.project-card .project-link:hover {
+    background-color: #1177bb;
 }
 
 /* Tech/Monospace Tags */
@@ -293,11 +316,11 @@ hr {
     border: 1px solid #3e3e42;
 }
 
-/* Image Grids (Carousels replacement) */
+/* Image Grids (Assets) */
 .image-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 10px;
+    gap: 15px;
 }
 .image-grid img {
     width: 100%;
@@ -305,6 +328,15 @@ hr {
     object-fit: cover;
     border-radius: 5px;
     border: 1px solid #3e3e42;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+}
+.image-grid img:hover {
+    transform: scale(1.05) translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.6);
+    border-color: #569cd6;
+    z-index: 2;
+    position: relative;
 }
 
 /* Buttons */
@@ -383,57 +415,68 @@ hr {
     display: none;
     position: fixed;
     top: 0; left: 0; width: 100%; height: 100%;
-    background-color: rgba(0,0,0,0.6);
+    background-color: rgba(0,0,0,0.8);
+    backdrop-filter: blur(5px);
     z-index: 1000;
     align-items: center;
     justify-content: center;
+    animation: fadeIn 0.2s ease-out;
 }
 .modal-content {
     background-color: #1e1e1e;
     border: 1px solid #3e3e42;
-    border-radius: 5px;
-    width: 600px;
+    border-radius: 8px;
+    width: 700px;
     max-width: 90%;
     max-height: 90vh;
     overflow-y: auto;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    box-shadow: 0 10px 40px rgba(0,0,0,0.8);
     display: flex;
     flex-direction: column;
+    animation: scaleIn 0.2s ease-out;
 }
 .modal-header {
     background-color: #252526;
-    padding: 10px 20px;
+    padding: 15px 20px;
     border-bottom: 1px solid #3e3e42;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    border-radius: 8px 8px 0 0;
 }
 .modal-header h3 {
     margin: 0;
-    font-size: 16px;
-    color: #dcdcaa;
+    font-size: 18px;
+    color: #ffffff; /* Brighter color instead of green */
 }
 .close-btn {
-    color: #cccccc;
-    font-size: 20px;
+    color: #858585;
+    font-size: 24px;
     cursor: pointer;
+    line-height: 1;
 }
 .close-btn:hover {
     color: #ffffff;
 }
 .modal-body {
-    padding: 20px;
+    padding: 25px;
 }
 #modal-image {
     width: 100%;
-    height: auto;
-    border-radius: 3px;
+    max-height: 400px;
+    object-fit: contain;
+    border-radius: 5px;
     margin-bottom: 20px;
     border: 1px solid #3e3e42;
+    background-color: #1e1e1e; /* in case image doesn't fill width */
 }
+
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+@keyframes scaleIn { from { transform: scale(0.95); opacity: 0; } to { transform: scale(1); opacity: 1; } }
 
 /* Responsive */
 @media (max-width: 768px) {
+    .engine-topbar-menus { display: none; }
     .mobile-hamburger {
         display: block;
     }
