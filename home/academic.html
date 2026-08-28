@@ -4,111 +4,96 @@
     <link rel="icon" href="../images/icon/favicon.webp" type="image/x-icon" />
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Academic History - Muhammad Irfan Rusydi Razaleigh</title>
+    <title>Academic History - Engine UI</title>
     <link rel="stylesheet" href="../css/styles.css">
 </head>
 <body>
-    <header>
-        <h1>Muhammad Irfan Rusydi Razaleigh</h1>
-        <nav>
-            <button class="dropbtn">
-                Menu
-                <span class="arrow arrow-down"></span>
-            </button>
-            <ul class="dropdown-content">
-                <li><a href="../index.html">Home</a></li>
-                <li><a href="personal.html">Personal and contact details</a></li>
-                <li><a href="academic.html">Academic History</a></li>
-                <li><a href="work.html">All Projects</a></li>
-                <li><a href="achievement.html">All Awards</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <div class="breadcrumb">
-        <a href="../index.html">Home</a> <span class="separator">&gt;</span> Academic History
+    <div class="engine-topbar">
+        <button class="mobile-hamburger" id="hamburger-btn">☰</button>
+        <div class="engine-topbar-menus">
+            <span>File</span>
+            <span>Edit</span>
+            <span>View</span>
+            <span>Window</span>
+            <span>Help</span>
+        </div>
+        <div class="engine-topbar-title">rusycem_portfolio - Level: Academic History</div>
     </div>
 
-    <div id="content">
-        <div class="logo-info-container">
-            <div class="logo-info-container education-section">
-                <h2 style="text-align:center;">Academic History</h2>
-                <hr />
-                <img src="../images/icon/utem_logo.webp" alt="Universiti Teknikal Malaysia Melaka logo" class="education-logo">
-                <div class="education-info">
-                    <h3>Universiti Teknikal Malaysia Melaka</h3>
-                    <p><strong>Bachelor of Information Technology, Game Technology</strong></p>
-                    <p>Oct 2022 - Now</p>
-                    <p><strong>CGPA:</strong> 3.69</p>
-                    <p>
-                        <strong>Activities and Societies:</strong>
+    <div class="engine-main">
+        <div class="engine-sidebar" id="sidebar">
+            <div class="sidebar-header">Content Drawer</div>
+            <ul class="sidebar-nav">
+                <li class="folder"><span>Pages</span></li>
+                <li><a href="../index.html">Home.level</a></li>
+                <li><a href="personal.html">Personal.asset</a></li>
+                <li><a href="academic.html" class="active">Academic.asset</a></li>
+                <li><a href="work.html">Projects.asset</a></li>
+                <li><a href="achievement.html">Awards.asset</a></li>
+                <li><a href="blog.html">Blog.asset</a></li>
+            </ul>
+        </div>
+
+        <div class="engine-viewport">
+            <div class="viewport-toolbar">
+                <span>Content</span> <span class="separator">></span> <span class="active">Academic History</span>
+            </div>
+            
+            <div class="viewport-content">
+                <h2>Academic History</h2>
+                
+                <div class="education-section">
+                    <img src="../images/icon/utem_logo.webp" alt="UTeM" class="education-logo">
+                    <div class="education-info">
+                        <h3>Universiti Teknikal Malaysia Melaka</h3>
+                        <p class="tech-tag">Bachelor of Information Technology, Game Technology</p>
+                        <p>Oct 2022 - Now | <strong>CGPA:</strong> 3.7</p>
+                        
+                        <p><strong>Activities and Societies:</strong></p>
                         <ul>
                             <li>FTMK ICT Student Club (FICTS)</li>
                             <li>Interactive Media Club (IMC)</li>
                             <li>UTeM Runner Orienteers Club (UROC)</li>
-                            <li>Persatuan Seni Silat Gayung Malaysia UTeM (PSSGMUTeM 21/22)</li>
+                            <li>Persatuan Seni Silat Gayung Malaysia UTeM</li>
                         </ul>
-                    <p>
-                        <strong>Position:</strong>
-                        <ul>
-                            <li>
-                                Presiden of IMC, Fakulti Teknologi Maklumat dan Komunikasi
-                            </li>
-                            <li>
-                                Exco Multimedia of UROC, Universiti Teknikal Malaysia Melaka
-                            </li>
-                        </ul>
-                    <p><strong>Skills:</strong> Leadership, Monetization, Game Development, Modelling</p>
+                        <br/>
+                        <p><strong>Positions:</strong> President of IMC, Exco Multimedia of UROC</p>
+                        <p><strong>Skills:</strong> <span class="tech-tag">Leadership</span> <span class="tech-tag">Monetization</span> <span class="tech-tag">Game Development</span> <span class="tech-tag">Modelling</span></p>
+                    </div>
                 </div>
-                <hr />
-                <img src="../images/icon/uitm.webp" alt="Universiti Teknologi MARA logo" class="education-logo">
-                <div class="education-info">
-                    <h3>Universiti Teknologi MARA</h3>
-                    <p><strong>Foundation degree, Engineering</strong></p>
-                    <p>Jul 2021 - Aug 2022</p>
-                    <p><strong>CGPA:</strong> 3.7</p>
-                    <p><strong>Activities and Societies:</strong></p>
-                    <ul>
-                        <li>Persatuan Silat</li>
-                        <li>Creations de UiTM</li>
-                    </ul>
-                    <p><strong>Skills:</strong> C (Programming Language), Research, DaVinci Resolve</p>
+
+                <div class="education-section">
+                    <img src="../images/icon/uitm.webp" alt="UiTM" class="education-logo">
+                    <div class="education-info">
+                        <h3>Universiti Teknologi MARA</h3>
+                        <p class="tech-tag">Foundation degree, Engineering</p>
+                        <p>Jul 2021 - Aug 2022 | <strong>CGPA:</strong> 3.7</p>
+                        
+                        <p><strong>Activities and Societies:</strong> Persatuan Silat, Creations de UiTM</p>
+                        <p><strong>Skills:</strong> <span class="tech-tag">C/C++</span> <span class="tech-tag">Research</span> <span class="tech-tag">DaVinci Resolve</span></p>
+                    </div>
                 </div>
-                <hr />
-                <img src="../images/icon/insan.webp" alt="Kolej PERMATA Insan logo" class="education-logo">
-                <div class="education-info">
-                    <h3>Kolej PERMATA Insan</h3>
-                    <p><strong>Malaysian Certificate of Education (SPM), Applied Science</strong></p>
-                    <p>Jan 2016 - Nov 2020</p>
-                    <p><strong>SPM:</strong> 6A 5B</p>
-                    <p><strong>Activities and Societies:</strong></p>
-                    <ul>
-                        <li>Pasukan Kadet Bomba Dan Penyelamat Malaysia</li>
-                        <li>Science Technology Engineering Mathematics (STEM)</li>
-                        <li>Olahraga</li>
-                        <li>Badminton</li>
-                    </ul>
-                    <p><strong>Skills:</strong> Research</p>
+
+                <div class="education-section">
+                    <img src="../images/icon/insan.webp" alt="PERMATA" class="education-logo">
+                    <div class="education-info">
+                        <h3>Kolej PERMATA Insan</h3>
+                        <p class="tech-tag">Malaysian Certificate of Education (SPM), Applied Science</p>
+                        <p>Jan 2016 - Nov 2020 | <strong>SPM:</strong> 6A 5B</p>
+                        
+                        <p><strong>Activities:</strong> Pasukan Kadet Bomba, STEM, Olahraga, Badminton</p>
+                        <p><strong>Skills:</strong> <span class="tech-tag">Research</span></p>
+                    </div>
                 </div>
+            </div>
+            
+            <div class="engine-statusbar">
+                <span>Ready</span>
+                <span>&copy; 2025 Muhammad Irfan Rusydi Razaleigh</span>
             </div>
         </div>
     </div>
 
-    <footer>
-        <div class="social-links">
-            <ul>
-                <li><a href="https://rusycem.itch.io/"><img src="../images/icon/itchio_icon.webp" alt="itch.io"></a></li>
-                <li><a href="https://www.linkedin.com/in/muhammad-irfan-rusydi-razaleigh/"><img src="../images/icon/linkedin_icon.webp" alt="LinkedIn"></a></li>
-                <li><a href="https://github.com/rusycem"><img src="../images/icon/github_icon.webp" alt="GitHub"></a></li>
-                <li><a href="https://www.youtube.com/@rusycem"><img src="../images/icon/youtube_icon.webp" alt="Youtube"></a></li>
-                <li><a href="https://www.facebook.com/muhdirfan.rusydi"><img src="../images/icon/facebook_icon.webp" alt="Facebook"></a></li>
-                <li><a href="https://www.instagram.com/irfnrusydi/"><img src="../images/icon/instagram_icon.webp" alt="Instagram"></a></li>
-            </ul>
-        </div>
-        <br />
-        <p>&copy; 2025 Muhammad Irfan Rusydi Razaleigh. All rights reserved.</p>
-    </footer>
     <script src="../js/script.js"></script>
 </body>
 </html>
-

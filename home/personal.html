@@ -1,115 +1,104 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <link rel="icon" href="../images/icon/favicon.webp" type="image/x-icon" />
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Personal Details - Muhammad Irfan Rusydi Razaleigh</title>
+    <title>Personal - Engine UI</title>
     <link rel="stylesheet" href="../css/styles.css">
 </head>
 <body>
-    <header>
-        <h1>Muhammad Irfan Rusydi Razaleigh</h1>
-        <nav>
-            <button class="dropbtn">
-                Menu
-                <span class="arrow arrow-down"></span>
-            </button>
-            <ul class="dropdown-content">
-                <li><a href="../index.html">Home</a></li>
-                <li><a href="personal.html">Personal and contact details</a></li>
-                <li><a href="academic.html">Academic History</a></li>
-                <li><a href="work.html">All Projects</a></li>
-                <li><a href="achievement.html">All Awards</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <div class="breadcrumb">
-        <a href="../index.html">Home</a> <span class="separator">&gt;</span> Personal and contact details
-    </div>
-    <div id="content" class="container" style="padding:20px; text-align: center; font-size:17px;">
-        <!-- Profile picture section -->
-        <div class="profile-picture-container">
-            <img src="../images/personal/formal.webp" alt="Profile Picture" class="profile-picture2">
+    <div class="engine-topbar">
+        <button class="mobile-hamburger" id="hamburger-btn">☰</button>
+        <div class="engine-topbar-menus">
+            <span>File</span>
+            <span>Edit</span>
+            <span>View</span>
+            <span>Window</span>
+            <span>Help</span>
         </div>
-        <!-- Content for Personal details page goes here -->
-        <h2>
-            I'm Muhammad Irfan Rusydi Razaleigh,
-        </h2>
-        <p>
-            Enthusiastic game development student pursuing a BSc (Hons) in Information Technology (Game Technology) at UTEM.<br />
-            I have received awards in game design and programming and have experience in developing various projects.<br /><br />
-            Looking for a job as <strong>game designer / game programmer.</strong><br />
-        </p>
-        <hr />
-        <h2> Resume & Cover Letter</h2>
-        <p>
-            <a href="../files/myresumenew.pdf" class="rounded-button">Resume</a>
-            <a href="https://www.linkedin.com/in/muhammad-irfan-rusydi-razaleigh/" class="rounded-button">LinkedIn</a>
-        </p>
-        <h2>Skills</h2>
-        <p>
-            <a class="rounded-button">Unreal Engine 5</a>
-            <a class="rounded-button">Unity</a>
-            <a class="rounded-button">Blender</a>
-            <a class="rounded-button">C#</a>
-            <a class="rounded-button">C++</a>
-            <a class="rounded-button">Python</a>
-            <a class="rounded-button">AutoCAD</a>
-            <a class="rounded-button">HTML</a>
-            <a class="rounded-button">CSS</a>
-            <a class="rounded-button">Javascript</a>
-            <a class="rounded-button">Github</a>
-            <a class="rounded-button">DaVinci Resolve</a>
-            <a class="rounded-button">Adobe Photoshop</a>
-            <a class="rounded-button">Adobe After Effects</a>
-            <a class="rounded-button">Critical Thinking</a>
-            <a class="rounded-button">Leadership and Event Management</a>
-
-        </p>
-        <hr />
-        <h2>Contact Details</h2>
-        <p>
-            Email: muhdirfanrusydi@gmail.com<br>
-            Phone: Follow Up with email.<br>
-            Address: Durian Tunggal, Melaka, Malaysia.
-        </p>
-        <hr />
-        <h2>Referees 1</h2>
-        <p>
-            Name: Ts. Dr. Ahmad Shaarizan bin Shaarani<br>
-            Position: Deputy Dean of Academic Affairs<br>
-            Faculty of Information and Communication Technology (FTMK)<br>
-            Institution: Universiti Teknikal Malaysia Melaka (UTeM)<br>
-            Phone: +6062704527<br>
-            Email: shaarizan@utem.edu.my<br>
-        </p>
-        <hr />
-        <h2>Referees 2</h2>
-        <p>
-            Name: Nazreen bin Abdullasim<br>
-            Position: Senior Lecturer<br>
-            Faculty of Information and Communication Technology (FTMK)<br>
-            Institution: Universiti Teknikal Malaysia Melaka (UTeM)<br>
-            Phone: +6062702550<br>
-            Email: nazreen.abdullasim@utem.edu.my<br>
-        </p>
+        <div class="engine-topbar-title">rusycem_portfolio - Level: Personal Details</div>
     </div>
-    <footer>
-        <div class="social-links">
-            <ul>
-                <li><a href="https://rusycem.itch.io/"><img src="../images/icon/itchio_icon.webp" alt="itch.io"></a></li>
-                <li><a href="https://www.linkedin.com/in/muhammad-irfan-rusydi-razaleigh/"><img src="../images/icon/linkedin_icon.webp" alt="LinkedIn"></a></li>
-                <li><a href="https://github.com/rusycem"><img src="../images/icon/github_icon.webp" alt="GitHub"></a></li>
-                <li><a href="https://www.youtube.com/@rusycem"><img src="../images/icon/youtube_icon.webp" alt="YouTube"></a></li>
-                <li><a href="https://www.facebook.com/muhdirfan.rusydi"><img src="../images/icon/facebook_icon.webp" alt="Facebook"></a></li>
-                <li><a href="https://www.instagram.com/irfnrusydi/"><img src="../images/icon/instagram_icon.webp" alt="Instagram"></a></li>
+
+    <div class="engine-main">
+        <div class="engine-sidebar" id="sidebar">
+            <div class="sidebar-header">Content Drawer</div>
+            <ul class="sidebar-nav">
+                <li class="folder"><span>Pages</span></li>
+                <li><a href="../index.html">Home.level</a></li>
+                <li><a href="personal.html" class="active">Personal.asset</a></li>
+                <li><a href="academic.html">Academic.asset</a></li>
+                <li><a href="work.html">Projects.asset</a></li>
+                <li><a href="achievement.html">Awards.asset</a></li>
+                <li><a href="blog.html">Blog.asset</a></li>
             </ul>
         </div>
-        <br />
-        <p>&copy; 2025 Muhammad Irfan Rusydi Razaleigh. All rights reserved.</p>
-    </footer>
+
+        <div class="engine-viewport">
+            <div class="viewport-toolbar">
+                <span>Content</span> <span class="separator">></span> <span class="active">Personal</span>
+            </div>
+            
+            <div class="viewport-content" style="max-width: 800px;">
+                <div class="intro-section" style="justify-content: center; text-align: center; flex-direction: column;">
+                    <div class="profile-picture-container">
+                        <img src="../images/personal/formal.webp" alt="Profile Picture">
+                    </div>
+                    <h2>I'm Muhammad Irfan Rusydi Razaleigh</h2>
+                    <p>Enthusiastic game development student pursuing a BSc (Hons) in Information Technology (Game Technology) at UTEM.<br />
+                    I have received awards in game design and programming and have experience in developing various projects.</p>
+                    <p>Looking for a job as <span class="tech-tag">Game Designer</span> / <span class="tech-tag">Game Programmer</span></p>
+                </div>
+
+                <hr/>
+                <h2>Documents & Links</h2>
+                <div style="display: flex; gap: 10px; margin-bottom: 20px;">
+                    <a href="../files/myresumenew.pdf" class="rounded-button">Download Resume (.pdf)</a>
+                    <a href="https://www.linkedin.com/in/muhammad-irfan-rusydi-razaleigh/" class="rounded-button" target="_blank">View LinkedIn</a>
+                </div>
+
+                <h2>Technical Skills</h2>
+                <div style="display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 30px;">
+                    <span class="tech-tag">Unreal Engine 5</span>
+                    <span class="tech-tag">Unity</span>
+                    <span class="tech-tag">Blender</span>
+                    <span class="tech-tag">C#</span>
+                    <span class="tech-tag">C++</span>
+                    <span class="tech-tag">Python</span>
+                    <span class="tech-tag">AutoCAD</span>
+                    <span class="tech-tag">HTML/CSS/JS</span>
+                    <span class="tech-tag">Github</span>
+                    <span class="tech-tag">DaVinci Resolve</span>
+                    <span class="tech-tag">Photoshop / After Effects</span>
+                </div>
+
+                <hr/>
+                <div style="display: flex; gap: 40px; flex-wrap: wrap;">
+                    <div style="flex: 1; min-width: 250px;">
+                        <h2>Contact</h2>
+                        <p><strong>Email:</strong> muhdirfanrusydi@gmail.com</p>
+                        <p><strong>Address:</strong> Durian Tunggal, Melaka, Malaysia</p>
+                    </div>
+                    <div style="flex: 1; min-width: 250px;">
+                        <h2>References</h2>
+                        <p><strong>Ts. Dr. Ahmad Shaarizan bin Shaarani</strong><br/>
+                        Deputy Dean of Academic Affairs (FTMK), UTeM<br/>
+                        shaarizan@utem.edu.my</p>
+                        <p><strong>Nazreen bin Abdullasim</strong><br/>
+                        Senior Lecturer (FTMK), UTeM<br/>
+                        nazreen.abdullasim@utem.edu.my</p>
+                    </div>
+                </div>
+
+            </div>
+            
+            <div class="engine-statusbar">
+                <span>Ready</span>
+                <span>&copy; 2025 Muhammad Irfan Rusydi Razaleigh</span>
+            </div>
+        </div>
+    </div>
+
     <script src="../js/script.js"></script>
 </body>
 </html>

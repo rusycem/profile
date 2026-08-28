@@ -1,889 +1,458 @@
-﻿/* Reset default margin and padding */
-html, body {
+/* Reset & Base Setup */
+* {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: 'Gill Sans MT', 'Gill Sans', Calibri, 'Trebuchet MS', sans-serif;    background-image: url('../images/icon/bluebell.webp');
-    background-size: cover; /* Cover the entire background */
-    position: relative; /* Set position relative to allow pseudo-element positioning */
-    background-repeat: no-repeat; /* Do not repeat the background image */
-    background-position: center center; /* Center the background image */
-    background-attachment: fixed;
-    min-height: 100vh; /* Ensure the body takes at least the full viewport height */
-    overflow-x: hidden;
-    /* Enable Font Smoothing (The "Thinner" Look) */
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale; 
-    text-rendering: optimizeLegibility;
 }
 
-    body::before {
-        content: "";
-        position: absolute; 
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: rgba(255, 255, 255, 1); /* Semi-transparent white overlay */
-        z-index: -1; /* Ensure the overlay is behind the content */
-    }
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #1e1e1e;
+    color: #cccccc;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    overflow: hidden; /* Prevent body scroll, handle in viewport */
+}
 
+a {
+    color: #569cd6;
+    text-decoration: none;
+}
+a:hover {
+    color: #9cdcfe;
+}
 
-header {
-    background: linear-gradient(135deg, #00134e, #024cb5 ); /* Interstellar Blue */
-    color: #e8dacd; /* Malted Milk */
-    padding: 5px; /* Adjust the padding */
-    text-align: center;
-    width: 100%; /* Ensure the header spans the full width */
-    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+/* Engine Top Bar */
+.engine-topbar {
+    height: 30px;
+    background-color: #333333;
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+    font-size: 13px;
+    border-bottom: 1px solid #1e1e1e;
+    flex-shrink: 0;
+}
+
+.engine-topbar-menus {
+    display: flex;
+    gap: 15px;
+}
+.engine-topbar-menus span {
+    cursor: default;
+}
+.engine-topbar-menus span:hover {
+    color: #ffffff;
+}
+.engine-topbar-title {
+    margin: 0 auto; /* Center title */
+    color: #999999;
+}
+
+/* Main Editor Layout */
+.engine-main {
+    display: flex;
+    flex: 1;
+    overflow: hidden;
+}
+
+/* Engine Sidebar (Outliner) */
+.engine-sidebar {
+    width: 250px;
+    background-color: #252526;
+    border-right: 1px solid #3e3e42;
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+    transition: transform 0.3s ease;
+}
+
+.sidebar-header {
+    padding: 10px 15px;
+    font-size: 11px;
+    text-transform: uppercase;
     letter-spacing: 1px;
+    color: #858585;
+    border-bottom: 1px solid #3e3e42;
+    font-weight: bold;
 }
 
-    header h1 {
-        margin: 10px;
-        font-size: 24px; /* Adjust the font size */
-    }
-
-nav ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0; /* Remove default margin */
-    letter-spacing: 1px;
+.sidebar-nav {
+    list-style: none;
+    padding: 10px 0;
+    flex: 1;
+    overflow-y: auto;
 }
 
-    nav ul li {
-        display: inline;
-        margin: 0 10px;
-    }
-
-        /* Style for menu items */
-        nav ul li a {
-            transition: box-shadow 0.3s ease; /* Smooth transition for box-shadow */
-            text-decoration: none;
-            color: #e8dacd; /* Malted Milk */
-            display: inline-block; /* Ensure the anchor tag behaves like a block element */
-            padding: 5px 20px; /* Adjust the padding to make the button wider */
-        }
-
-            nav ul li a:hover {
-                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 8px 16px rgba(0, 0, 0, 0.1); /* Add box-shadow on hover */
-                border-radius: 20px; /* Apply rounded corners */
-                background: linear-gradient(to right, #9dc0fa, #1f86fc); /* Pool Water */
-                color: rgba(0, 19, 78, 0.8); /* Interstellar Blue*/
-                /* Add any other styles you want to apply on hover */
-            }
-
-.page-title {
-    color: #00134e;
-    text-align: center; /* Center the text */
-    text-shadow: -1px -1px 0 #e8dacd, 1px -1px 0 #e8dacd, -1px 1px 0 #e8dacd, 1px 1px 0 #e8dacd; /* Set multiple shadows to create an outline effect */
-    letter-spacing: 2px;
-    font-size: 25px;
-
+.sidebar-nav li a {
+    display: block;
+    padding: 8px 15px 8px 30px;
+    color: #cccccc;
+    font-size: 14px;
+    position: relative;
 }
 
-
-/* Center breadcrumb on small screens */
-@media (max-width: 768px) {
-    .page-title {
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
-        text-align: center;
-        max-width: 60%; /* Reduce width on smaller screens */
-    }
+.sidebar-nav li a::before {
+    content: "📄";
+    position: absolute;
+    left: 10px;
+    font-size: 12px;
+    opacity: 0.7;
 }
 
+.sidebar-nav li a:hover {
+    background-color: #2a2d2e;
+    color: #ffffff;
+}
+
+.sidebar-nav li a.active {
+    background-color: #37373d;
+    color: #ffffff;
+}
+
+.sidebar-nav li.folder > span {
+    display: block;
+    padding: 8px 15px 8px 10px;
+    color: #cccccc;
+    font-size: 14px;
+    cursor: default;
+    font-weight: bold;
+}
+.sidebar-nav li.folder > span::before {
+    content: "📁";
+    margin-right: 5px;
+}
+
+/* Viewport (Main Content Area) */
+.engine-viewport {
+    flex: 1;
+    background-color: #1e1e1e;
+    overflow-y: auto;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Viewport Toolbar (Breadcrumb area) */
+.viewport-toolbar {
+    height: 40px;
+    background-color: #2d2d30;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    font-size: 13px;
+    border-bottom: 1px solid #3e3e42;
+    color: #999999;
+}
+.viewport-toolbar .separator {
+    margin: 0 8px;
+    color: #666;
+}
+
+/* Viewport Content */
+.viewport-content {
+    padding: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+    flex: 1;
+}
+
+h1, h2, h3, h4 {
+    color: #dcdcaa; /* VSCode Yellow/Green function color */
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+
+h1 { font-size: 2.5rem; }
+h2 { font-size: 2rem; border-bottom: 1px solid #3e3e42; padding-bottom: 10px; }
+
+p {
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    background: #3e3e42;
+    margin: 30px 0;
+}
+
+/* Mobile Hamburger */
+.mobile-hamburger {
+    display: none;
+    background: none;
+    border: none;
+    color: #cccccc;
+    font-size: 20px;
+    cursor: pointer;
+    padding: 5px;
+    margin-right: 10px;
+}
+
+/* Profile / Intro Section */
 .intro-section {
     display: flex;
-    justify-content: space-between;
+    gap: 40px;
     align-items: center;
-    padding: 20px;
-    margin: 20px;
-    background: linear-gradient(to right, #9dc0fa, #e8dacd);
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #252526;
+    padding: 30px;
+    border-radius: 5px;
+    border: 1px solid #3e3e42;
+    margin-bottom: 40px;
 }
 
-    .intro-section hr {
-        border-bottom-color: #00134e; /* Interstellar Blue */
-        margin-bottom: 15px;
-    }
-
-.left-column, .right-column {
-    flex: 1;
-    padding: 20px;
-    box-sizing: border-box; /* Include padding and border in the width */
+.profile-picture-container img {
+    width: 150px;
+    height: 150px;
+    border-radius: 5px; /* Square/rounded for engine look instead of circle */
+    border: 2px solid #569cd6;
 }
 
-    .left-column h2 {
-        text-align: center;
-        margin-top: 10px;
-    }
+.intro-text h1 {
+    margin-top: 0;
+}
 
-    .left-column p {
-        text-align: center;
-        font-size: 1.2em;
-        margin-top: 10px;
-        color: #00134e;
-    }
-
-    .right-column h1 {
-        font-size: 3em;
-        color: #00134e;
-        margin: 0;
-        margin-right: 20px;
-    }
-
-    .right-column p {
-        font-size: 1.2em;
-        color: #00134e;
-        margin: 10px 0;
-        margin-right: 20px;
-    }
-
-.profile-picture-container {
+/* Social Links */
+.social-links ul {
+    list-style: none;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+.social-links img {
+    width: 24px;
+    filter: invert(0.8);
+    transition: filter 0.2s;
+}
+.social-links img:hover {
+    filter: invert(1);
 }
 
-.profile-picture {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    object-fit: cover;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-.profile-picture2 {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    object-fit: cover;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-
-.button-container {
-    margin: 20px 0;
-}
-
-.rounded-button {
-    background: linear-gradient(135deg, #00134e, #024cb5 ); /* Interstellar Blue */
-    color: #e8dacd; /* Malted Milk */
-    border: none;
-    padding: 10px 20px;
-    margin: 5px;
-    cursor: pointer;
-    border-radius: 20px;
-    text-decoration: none;
-    transition: background-color 0.3s ease;
-    display: inline-block;
-}
-
-    .rounded-button:hover {
-        background: linear-gradient(to right, #9dc0fa, #1f86fc); /* Pool Water */
-        color: rgba(0, 19, 78, 0.8); /* Interstellar Blue*/
-    }
-
-.breadcrumb {
-    background: linear-gradient(135deg, #00134e, #024cb5 ); /* Interstellar Blue */
-    color: #e8dacd; /* Malted Milk */
-    border-radius: 20px;
-    padding: 10px 20px;
-    display: inline-block;
-    text-align: left;
-    margin: 10px;
-    letter-spacing: 1px;
-}
-/* Center breadcrumb on small screens */
-@media (max-width: 768px) {
-    .breadcrumb {
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
-        text-align: center;
-        max-width: 50%; /* Reduce width on smaller screens */
-    }
-}
-
-.breadcrumb .separator {
-    font-weight: bold; /* Optionally, set bold font weight for separators */
-    color: #e8dacd; /* Ensure separator matches breadcrumb text color */
-}
-
-.breadcrumb a {
-    color: #e8dacd; /* Change color */
-    text-decoration: none; /* Remove underline */
-}
-
-    .breadcrumb a:hover {
-        text-shadow: 0 0 5px #000; /* Add text-shadow on hover to create a bold effect */
-    }
-
-
-/* Additional CSS for carousel animation */
-.carousel {
-    overflow: hidden; /* Hide overflow to create the slider effect */
-    width: 100%; /* Ensure the carousel takes full width */
-}
-
-.image-grid {
-    display: flex; /* Use flexbox for image alignment */
-    animation-duration: 20s; /* Duration of the animation */
-    animation-timing-function: linear; /* Linear animation */
-    animation-iteration-count: infinite; /* Infinite looping */
-}
-
-/* Additional CSS for forward animation */
-.forward .image-grid {
-    animation-name: slide-forward; /* Apply forward animation */
-    justify-content: flex-end; /* Align images to the right for the first carousel */
-}
-
-/* Additional CSS for backward animation */
-.backward .image-grid {
-    animation-name: slide-backward; /* Apply backward animation */
-    justify-content: flex-start; /* Align images to the left for the second carousel */
-}
-
-.image-grid img {
-    flex-shrink: 0; /* Prevent images from shrinking */
-    width: auto; /* Allow images to adjust width proportionally */
-    height: 200px; /* Set a fixed height for images */
-    margin-right: 5px; /* Adjust margin between images */
-}
-
-
-/* Additional CSS for carousel animation */
-@keyframes slide-forward {
-    0% {
-        transform: translateX(0);
-    }
-
-    100% {
-        transform: translateX(50%);
-    }
-}
-
-@keyframes slide-backward {
-    0% {
-        transform: translateX(0);
-    }
-
-    100% {
-        transform: translateX(-50%);
-    }
-}
-
-
-/* Media query for smaller screens */
-@media (max-width: 768px) {
-    header nav ul {
-        display: flex;
-        flex-wrap: wrap; /* Allow menu items to wrap to the next line */
-        justify-content: center; /* Center align menu items */
-    }
-
-        header nav ul li {
-            flex: 0 0 50%; /* Set menu items to take up half of the available width */
-            text-align: center; /* Center align menu items */
-            margin-bottom: 10px; /* Add some space between menu items */
-        }
-}
-
-
-/* General content styles */
-#content {
-    margin-bottom: 20px;
-    color: #00134e;
-    letter-spacing: 1px;
-}
-
-
-/* Center breadcrumb on small screens */
-@media (max-width: 768px) {
-    #content h2 {
-        text-align: center;
-    }
-}
-
-.content-title {
-    color: #00134e;
-    text-align: center;
-    letter-spacing: 1px;
-}
-
-
-
-.profile-picture-container {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 20px;
-}
-
-.profile-picture {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    object-fit: cover;
-    animation: pulse 3s infinite;
-}
-
-@keyframes pulse {
-    0%, 100% {
-        transform: scale(1);
-    }
-
-    50% {
-        transform: scale(1.2);
-    }
-}
-.education-section {
-    max-width: 800px; /* Set the maximum width */
-    margin: auto; /* Center the section horizontally */
-    overflow: hidden; /* Ensure content wraps within the section */
-    padding: 20px; /* Adjust padding */
-    background: linear-gradient(to right, #9dc0fa, #e8dacd); /* Set background gradient */
-    border-radius: 10px; /* Apply border radius */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add box shadow */
-    margin-bottom: 20px; /* Add bottom margin for spacing */
-}
-
-.education-logo {
-    width: 250px;
-    height: 250px; /* Adjust logo size for responsiveness */
-    border-radius: 10px;
-    overflow: hidden; /* Hide overflow content */
-    display: flex; /* Use flexbox to center content */
-    margin-right: 50px;
-    margin-left: 50px;
-    float: left;
-}
-
-    .education-logo img {
-        max-width: 100%; /* Ensure the image fits within the container */
-        max-height: 100%; /* Ensure the image fits within the container */
-        object-fit: cover; /* Maintain aspect ratio and cover the container */
-    }
-
-.education-info {
-    overflow: hidden; /* Ensure info container wraps around content */
-}
-
-@media screen and (max-width: 768px) {
-    .education-section {
-        display: block; /* Change to block layout for smaller screens */
-    }
-
-    .logo-info-container {
-        text-align: center; /* Center align both logo and info on smaller screens */
-        display: block; /* Change to block layout for smaller screens */
-        border-bottom: 1px solid #ccc; /* Ensure border-bottom appears */
-        padding-bottom: 20px; /* Add padding to separate containers */
-    }
-
-    .logo-info-container h3{
-        font-weight: bolder;
-    }
-
-    .education-logo {
-        margin: 0 auto 20px; /* Adjust margin to center and separate containers */
-        float: none; /* Remove float on smaller screens */
-    }
-}
-
-
-
-.left-column {
-    flex: 0 0 30%; /* Adjust the width of the left column */
-}
-
-.right-column {
-    flex: 0 0 65%; /* Adjust the width of the right column */
-}
-
-
-.filter-buttons {
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-.filter-button {
-    background: linear-gradient(to right, #00134e, #024cb5 ); /* Interstellar Blue */
-    color: #e8dacd;
-    border: none;
-    padding: 10px 20px;
-    margin: 5px;
-    cursor: pointer;
-    border-radius: 20px;
-    transition: background-color 0.3s ease;
-    letter-spacing: 1px;
-}
-
-    .filter-button:hover {
-        background: linear-gradient(to right, #9dc0fa, #e8dacd);
-        color: rgba(0, 19, 78, 0.8); /* Interstellar Blue*/
-    }
-
+/* Projects Grid (Assets Browser) */
 .projects {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     gap: 20px;
-    justify-content: center;
-    padding: 0 20px;
+    margin-top: 20px;
 }
 
 .project-card {
-    position: relative;
-    width: calc(33% - 40px);
-    background: linear-gradient(135deg, #9dc0fa, #e8dacd);
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, background 0.3s ease;
-    overflow: hidden;
+    background-color: #252526;
+    border: 1px solid #3e3e42;
+    border-radius: 5px;
     cursor: pointer;
+    transition: border-color 0.2s, transform 0.2s;
+    overflow: hidden;
+    position: relative;
+}
+.project-card:hover {
+    border-color: #569cd6;
+    transform: translateY(-2px);
 }
 
-    .project-card .card-content {
-        padding: 20px;
-        text-align: center;
-    }
+.project-logo {
+    height: 150px;
+    background: #1e1e1e;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border-bottom: 1px solid #3e3e42;
+}
+.project-logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
 
-    .project-card .project-logo {
-        width: 100px;
-        height: 100px;
-        margin: 0 auto;
-        overflow: hidden;
-        border-radius: 50%;
-    }
+.card-content {
+    padding: 15px;
+}
+.card-content h3 {
+    font-size: 16px;
+    margin: 0 0 5px 0;
+    color: #4ec9b0; /* VSCode class color */
+}
+.card-content p {
+    font-size: 13px;
+    color: #9cdcfe;
+    margin: 0;
+}
 
-        .project-card .project-logo img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;       /* fills the square, crops excess */
-            object-position: center; /* keeps it centered */
-            display: block;
-        }
+/* Tech/Monospace Tags */
+.tech-tag {
+    font-family: 'Consolas', 'Courier New', monospace;
+    background-color: #2d2d30;
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-size: 12px;
+    color: #ce9178; /* string color */
+    border: 1px solid #3e3e42;
+}
 
+/* Image Grids (Carousels replacement) */
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 10px;
+}
+.image-grid img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 5px;
+    border: 1px solid #3e3e42;
+}
 
-    .project-card h3 {
-        margin-top: 10px;
-    }
+/* Buttons */
+.rounded-button {
+    background-color: #0e639c;
+    color: #ffffff;
+    padding: 8px 16px;
+    border: 1px solid #1177bb;
+    border-radius: 3px;
+    display: inline-block;
+    cursor: pointer;
+    font-size: 14px;
+    text-align: center;
+}
+.rounded-button:hover {
+    background-color: #1177bb;
+    color: #ffffff;
+}
 
-    .project-card p {
-        margin-top: 5px;
-        color: #00134e;
-    }
+/* Footer (Status Bar) */
+.engine-statusbar {
+    height: 25px;
+    background-color: #007acc; /* VSCode Blue status bar */
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 15px;
+    font-size: 12px;
+    flex-shrink: 0;
+}
+.engine-statusbar a {
+    color: #ffffff;
+}
 
-    .project-card:hover {
-        transform: scale(1.05);
-        color: rgba(0, 19, 78, 0.8); /* Interstellar Blue*/
-    }
+/* Education / Academic info */
+.education-section {
+    background-color: #252526;
+    border: 1px solid #3e3e42;
+    border-radius: 5px;
+    padding: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+}
+.education-logo {
+    width: 100px;
+    flex-shrink: 0;
+    background: #fff;
+    padding: 5px;
+    border-radius: 5px;
+}
+.education-info ul {
+    margin-left: 20px;
+    margin-bottom: 15px;
+}
 
-    .project-card:hover p{
-        color:  #00134e;
-        padding: 10px;
-    }
+/* Achievements */
+.achievement {
+    background-color: #252526;
+    border-left: 3px solid #c586c0; /* Keyword color */
+    padding: 15px 20px;
+    margin-bottom: 15px;
+}
+.achievement h3 {
+    margin-bottom: 5px;
+}
+.achievement .issuer-date {
+    color: #858585;
+    font-size: 13px;
+}
 
-    .project-card .card-overlay {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0, 19, 78, 0.8); /* Interstellar Blue*/
-        color: #e8dacd;
-        padding: 20px;
-        text-align: center;
-        opacity: 0;
-        transition: opacity 0.3s ease;
-        overflow-y: auto;
-        margin-left: -20px;
-        margin-right: -10px;
-    }
-
-    .project-card .card-overlay {
-        opacity: 0;
-        visibility: hidden; /* new */
-        transition: opacity 0.3s ease, visibility 0.3s ease;
-    }
-
-
-
-
-  /* The modal background */
+/* Modal (Properties Panel) */
 .modal {
     display: none;
     position: fixed;
-    z-index: 999;
-    left: 0; top: 0;
-    width: 100%; height: 100%;
-    background-color: rgba(0,0,0,0.8);
-    overflow-y: auto; /* ensures scroll if content is taller than screen */
-    padding: 20px;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background-color: rgba(0,0,0,0.6);
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
 }
-
 .modal-content {
-    background: white;
-    margin: auto;
-    padding: 20px;
-    border-radius: 15px;
-    width: 80%;
-    max-width: 700px;
-    animation: fadeIn 0.3s ease;
-    color: #00134e;
-    max-height: 90vh; /* so it fits inside screen */
-    overflow-y: auto; /* scroll if content is long */
-}
-
-#modal-image {
-    max-width: 200px;
-    max-height: 200px;
-    display: block;
-    margin: 0 auto 15px;
-    border-radius: 10px;
-}
-
-
-/* Close button */
-.close-btn {
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-    cursor: pointer;
-}
-
-/* Animation */
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(-20px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-  
-    
-.project-link {
-    position: relative;
-    display: block;
-    margin: 5px auto 10px; /* Center the button horizontally and move it up */
-    padding: 10px 20px;
-    background: linear-gradient(135deg, #00134e, #024cb5 ); /* Interstellar Blue */
-    color: white;
-    border-radius: 20px;
-    text-decoration: none;
-    text-align: center;
-    z-index: 1;
-    transition: background-color 0.3s ease;
-    width: fit-content;
-}
-
-.project-card:hover .project-link {
-    background: linear-gradient(to right, #9dc0fa, #e8dacd);
-    color: rgba(0, 19, 78, 0.8); /* Interstellar Blue*/
-}
-
-@media (max-width: 768px) {
-    .project-card {
-        width: calc(50% - 40px);
-    }
-}
-
-@media (max-width: 480px) {
-    .project-card {
-        width: 100%;
-    }
-}
-
-.card-overlay-content {
-    max-height: 80vh;
+    background-color: #1e1e1e;
+    border: 1px solid #3e3e42;
+    border-radius: 5px;
+    width: 600px;
+    max-width: 90%;
+    max-height: 90vh;
     overflow-y: auto;
-    padding: 10px;
-    margin-bottom: 40px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
     display: flex;
-    align-items: center; /* Center vertically */
-    justify-content: center; /* Center horizontally */
+    flex-direction: column;
 }
-
-.container {
-    max-width: 800px;
-    margin: auto;
-    overflow: hidden;
-    padding: 0 20px;
-    background: linear-gradient(135deg, #9dc0fa, #e8dacd);
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-}
-
-.container2 {
-    max-width: 400px;
-    margin: auto;
-    overflow: hidden;
-    padding: 0 20px;
-    background: linear-gradient(135deg, #9dc0fa, #e8dacd);
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px;
-}
-
-.quality {
+.modal-header {
+    background-color: #252526;
+    padding: 10px 20px;
+    border-bottom: 1px solid #3e3e42;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 20px;
 }
-
-    .quality h3 {
-        margin-right: 10px;
-        color: #00134e;
-        flex-basis: 30%;
-    }
-
-    .quality p {
-        margin: 0 20px;
-        flex-basis: 70%; /* adjust the width as needed */
-    }
-
-    .quality img {
-        width: 50px;
-        height: 50px;
-        margin-right: 10px;
-    }
-
-.achievement {
-    margin: 20px 0;
-    padding: 20px;
-}
-
-    .achievement h3 {
-        margin-top: 0;
-        color: #00134e;
-    }
-
-    .achievement p {
-        margin: 10px 0;
-    }
-
-    .achievement .issuer-date {
-        color: #00134e;
-        font-size: 0.9em;
-    }
-
-    .achievement .associated {
-        font-weight: bold;
-        color: #00134e;
-    }
-
-
-/* Desktop: always show nav ul, hide menu button */
-@media (min-width: 601px) {
-    nav {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-        nav ul {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-            nav ul li {
-                display: flex;
-                align-items: center;
-                margin: 0 10px;
-            }
-
-    .dropbtn, .arrow {
-        display: none !important;
-    }
-
-    .dropdown-content {
-        display: flex !important;
-        position: static;
-        flex-direction: row;
-        background: none;
-        border-radius: 0;
-        width: auto;
-    }
-
-        .dropdown-content li {
-            width: auto;
-        }
-}
-
-.social-links ul {
-    list-style: none;
-    padding: 0;
+.modal-header h3 {
     margin: 0;
-    display: flex;
-    gap: 10px; /* space between icons */
-    justify-content: center; /* center them under the profile */
+    font-size: 16px;
+    color: #dcdcaa;
 }
-
-.social-links li {
-    display: inline-block;
+.close-btn {
+    color: #cccccc;
+    font-size: 20px;
+    cursor: pointer;
 }
-
-.social-links img {
-    width: 28px;  /* control icon size */
-    height: 28px; /* keeps them square */
-    object-fit: contain;
-    transition: transform 0.2s ease;
+.close-btn:hover {
+    color: #ffffff;
 }
-
-.social-links img:hover {
-    transform: scale(1.1); /* small zoom on hover */
-}
-
-
-footer {
-    background: linear-gradient(to right, #00134e, #024cb5 ); /* Interstellar Blue */
-    color: #e8dacd; /* Malted Milk */
+.modal-body {
     padding: 20px;
-    text-align: center;
-    position: relative;
-    bottom: 0;
+}
+#modal-image {
     width: 100%;
-    max-width: 100vw;
-    box-sizing: border-box;
-    overflow-x: hidden;
-    letter-spacing: 1px;
+    height: auto;
+    border-radius: 3px;
+    margin-bottom: 20px;
+    border: 1px solid #3e3e42;
 }
 
-    footer .social-links ul {
-        list-style-type: none;
-        padding: 0;
-        margin: 0;
+/* Responsive */
+@media (max-width: 768px) {
+    .mobile-hamburger {
+        display: block;
+    }
+    .engine-sidebar {
+        position: absolute;
+        height: 100%;
+        z-index: 50;
+        transform: translateX(-100%);
+    }
+    .engine-sidebar.open {
+        transform: translateX(0);
+    }
+    .intro-section {
+        flex-direction: column;
         text-align: center;
-        display: flex;
-        justify-content: center; /* Center align the social links horizontally */
     }
-
-        footer .social-links ul li {
-            margin-right: 10px;
-        }
-
-            footer .social-links ul li:last-child {
-                margin-right: 0; /* Remove margin from the last item */
-            }
-
-            footer .social-links ul li a {
-                text-decoration: none;
-                display: inline-block;
-                width: 40px; /* Width of the icon container */
-                height: 40px; /* Height of the icon container */
-                border-radius: 20px; /* Make the container round */
-                overflow: hidden; /* Ensure the icon fits within the container */
-                background-color: #e8dacd; /* Malted Milk */
-                display: flex;
-                justify-content: center;
-                align-items: center;
-            }
-
-                footer .social-links ul li a img {
-                    width: 70%; /* Scale the icon to fit within the container */
-                    height: auto; /* Maintain the aspect ratio */
-                }
-
-    footer p {
-        word-break: break-word;
-        overflow-wrap: break-word;
-        white-space: normal;
-        max-width: 100vw;
-        box-sizing: border-box;
-        margin: 10px auto 0 auto;
-        padding: 0 10px;
-    }
-
-
-
-@media (max-width: 600px) {
-    .dropdown-content {
-        display: none !important;
+    .education-section {
         flex-direction: column;
-        background: linear-gradient(135deg, #00134e, #024cb5);
-        border-radius: 0 0 10px 10px;
-        width: 100%;
-        position: static;
-        margin: 0;
-        padding: 0;
-        z-index: 100;
-    }
-
-        .dropdown-content.open {
-            display: flex !important;
-        }
-}
-
-@media (max-width: 600px) {
-    nav {
-        position: relative;
-    }
-
-    .dropbtn {
-        font-family: 'Gill Sans MT', 'Gill Sans', Calibri;
-        display: flex;
         align-items: center;
-        justify-content: center;
-        width: 100%;
-        background: linear-gradient(135deg, #00134e, #024cb5);
-        color: #e8dacd;
-        border: none;
-        padding: 15px;
-        font-size: 18px;
-        cursor: pointer;
-        border-radius: 10px 10px 0 0;
+        text-align: center;
     }
-
-    .arrow {
-        display: inline-block;
-        margin-left: 10px;
-        border: solid #e8dacd;
-        border-width: 0 3px 3px 0;
-        padding: 4px;
-        transition: transform 0.3s;
-    }
-
-    .arrow-down {
-        transform: rotate(45deg);
-    }
-
-    .arrow-up {
-        transform: rotate(-135deg);
-    }
-
-    .dropdown-content {
-        display: none;
-        flex-direction: column;
-        background: linear-gradient(135deg, #00134e, #024cb5);
-        border-radius: 0 0 10px 10px;
-        width: 100%;
-        position: static;
-        margin: 0;
-        padding: 0;
-        z-index: 100;
-    }
-
-        .dropdown-content.open {
-            display: flex !important;
-        }
-
-        .dropdown-content li {
-            width: 100%;
-            text-align: center;
-            margin: 0;
-        }
-
-            .dropdown-content li a {
-                display: block;
-                padding: 12px 0;
-                color: #e8dacd;
-                text-decoration: none;
-            }
-
-                .dropdown-content li a:hover {
-                    background: #024cb5;
-                }
 }

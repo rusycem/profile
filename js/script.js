@@ -1,4 +1,4 @@
-﻿function showPage(page) {
+function showPage(page) {
     var contentDiv = document.getElementById('content');
     var currentPageLink = document.getElementById('currentPage');
 
@@ -93,15 +93,12 @@ if (modal && closeBtn) {
 }
 
 
-    const dropbtn = document.querySelector('.dropbtn');
-    const dropdownContent = document.querySelector('.dropdown-content');
-    const arrow = document.querySelector('.arrow');
+    const hamburgerBtn = document.getElementById('hamburger-btn');
+    const sidebar = document.getElementById('sidebar');
 
-    if (dropbtn && dropdownContent && arrow) {
-        dropbtn.addEventListener('click', function () {
-            dropdownContent.classList.toggle('open');
-            arrow.classList.toggle('arrow-up');
-            arrow.classList.toggle('arrow-down');
+    if (hamburgerBtn && sidebar) {
+        hamburgerBtn.addEventListener('click', function () {
+            sidebar.classList.toggle('open');
         });
     }
 });

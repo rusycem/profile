@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" href="../images/icon/favicon.webp" type="image/x-icon" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - Engine UI</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+</head>
+<body>
+    <div class="engine-topbar">
+        <button class="mobile-hamburger" id="hamburger-btn">☰</button>
+        <div class="engine-topbar-menus">
+            <span>File</span>
+            <span>Edit</span>
+            <span>View</span>
+            <span>Window</span>
+            <span>Help</span>
+        </div>
+        <div class="engine-topbar-title">rusycem_portfolio - Level: Blog</div>
+    </div>
+
+    <div class="engine-main">
+        <div class="engine-sidebar" id="sidebar">
+            <div class="sidebar-header">Content Drawer</div>
+            <ul class="sidebar-nav">
+                <li class="folder"><span>Pages</span></li>
+                <li><a href="../index.html">Home.level</a></li>
+                <li><a href="personal.html">Personal.asset</a></li>
+                <li><a href="academic.html">Academic.asset</a></li>
+                <li><a href="work.html">Projects.asset</a></li>
+                <li><a href="achievement.html">Awards.asset</a></li>
+                <li><a href="blog.html" class="active">Blog.asset</a></li>
+            </ul>
+        </div>
+
+        <div class="engine-viewport">
+            <div class="viewport-toolbar">
+                <span>Content</span> <span class="separator">></span> <span class="active" id="breadcrumb-current">Blog</span>
+            </div>
+            
+            <div class="viewport-content blog-container">
+                <!-- Blog listing or single post will be injected here by JS -->
+                <div id="blog-content">
+                    <h2 class="page-title">Loading posts...</h2>
+                </div>
+            </div>
+            
+            <div class="engine-statusbar">
+                <span>Ready</span>
+                <span>&copy; 2025 Muhammad Irfan Rusydi Razaleigh</span>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/script.js"></script>
+    <script src="../js/blog.js"></script>
+</body>
+</html>
