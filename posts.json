@@ -1,0 +1,9 @@
+[
+    {
+        "id": "sample-post",
+        "title": "Welcome to my Game Dev Blog!",
+        "date": "2026-08-29",
+        "summary": "This is the first post on my new Engine UI themed blog. Here I will share my journey in game development, technical deep dives, and project updates.",
+        "file": "sample-post.md"
+    }
+]

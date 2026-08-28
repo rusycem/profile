@@ -4,131 +4,87 @@
     <link rel="icon" href="images/icon/favicon.webp" type="image/x-icon" />
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home - Muhammad Irfan Rusydi Razaleigh - Home</title>
+    <title>Home - Muhammad Irfan</title>
     <link rel="stylesheet" href="css/styles.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 </head>
 <body>
-    <header>
-        <h1>Muhammad Irfan Rusydi Razaleigh</h1>
-        <nav>
-            <button class="dropbtn">
-                Menu
-                <span class="arrow arrow-down"></span>
-            </button>
-            <ul class="dropdown-content">
-                <li><a href="home/personal.html">Personal and contact details</a></li>
-                <li><a href="home/academic.html">Academic History</a></li>
-                <li><a href="home/work.html">All Projects</a></li>
-                <li><a href="home/achievement.html">All Awards</a></li>
+    <div class="engine-topbar">
+        <button class="mobile-hamburger" id="hamburger-btn">☰</button>
+        <div class="engine-topbar-menus">
+            <span>File</span>
+            <span>Edit</span>
+            <span>View</span>
+            <span>Window</span>
+            <span>Help</span>
+        </div>
+        <div class="engine-topbar-title">rusycem_portfolio - Level: Home</div>
+    </div>
+
+    <div class="engine-main">
+        <div class="engine-sidebar" id="sidebar">
+            <div class="sidebar-header">Content Drawer</div>
+            <ul class="sidebar-nav">
+                <li class="folder"><span>Pages</span></li>
+                <li><a href="index.html" class="active">Home.level</a></li>
+                <li><a href="home/personal.html">Personal.asset</a></li>
+                <li><a href="home/academic.html">Academic.asset</a></li>
+                <li><a href="home/work.html">Projects.asset</a></li>
+                <li><a href="home/achievement.html">Awards.asset</a></li>
+                <li><a href="home/blog.html">Blog.asset</a></li>
             </ul>
-        </nav>
-    </header>
-
-    <div id="content">
-        <!-- New Section -->
-        <div class="intro-section">
-            <div class="left-column">
-                <div class="profile-picture-container">
-                    <img src="images/personal/formal.webp" alt="Profile Picture" class="profile-picture2">
-                </div>
-                <h2>Muhammad Irfan Rusydi Razaleigh</h2>
-                <hr>
-                <p>Aspiring Game Developer</p>
-            <div class="social-links">
-                <ul>
-                    <li><a href="https://rusycem.itch.io/"><img src="images/icon/itchio_icon.webp" alt="itch.io"></a></li>
-                    <li><a href="https://www.linkedin.com/in/muhammad-irfan-rusydi-razaleigh/"><img src="images/icon/linkedin_icon.webp" alt="LinkedIn"></a></li>
-                    <li><a href="https://github.com/rusycem"><img src="images/icon/github_icon.webp" alt="GitHub"></a></li>
-                    <li><a href="https://www.youtube.com/@rusycem"><img src="images/icon/youtube_icon.webp" alt="Youtube"></a></li>
-                    <li><a href="https://www.facebook.com/muhdirfan.rusydi"><img src="images/icon/facebook_icon.webp" alt="Facebook"></a></li>
-                    <li><a href="https://www.instagram.com/irfnrusydi/"><img src="images/icon/instagram_icon.webp" alt="Instagram"></a></li>
-                </ul>
-            </div>
-            </div>
-            <script>
-                // Function to change the layout of intro-section
-                function adjustLayout() {
-                    const introSection = document.querySelector('.intro-section');
-
-                    if (window.innerWidth <= 768) {
-                        // Stack the columns vertically on small screens
-                        introSection.style.flexDirection = 'column';
-                    } else {
-                        // Revert back to row layout on larger screens
-                        introSection.style.flexDirection = 'row';
-                    }
-                }
-
-                // Check layout when the page loads
-                window.addEventListener('load', adjustLayout);
-
-                // Check layout when the window is resized
-                window.addEventListener('resize', adjustLayout);
-            </script>
-
-            <div class="right-column">
-                <h1>Hello! I'm Irfan.</h1>
-                <p>Him's who I am & what I do</p>
-                <div class="button-container">
-                    <a href="home/personal.html" class="rounded-button">Resume</a>
-                    <a href="home/work.html" class="rounded-button">My Projects</a>
-                    <a href="home/academic.html" class="rounded-button">Academics</a>
-                    <a href="home/achievement.html" class="rounded-button">Awards</a>
-                </div>
-                <p>An enthusiastic game development student with awards in game design and programming.</p>
-            </div>
         </div>
 
-        <!-- First Image slider -->
-        <div class="carousel forward">
-            <div class="image-grid">
-                <img src="images/personal/dekan1.webp" alt="Image 1">
-                <img src="images/personal/1.webp" alt="Image 2">
-                <img src="images/personal/asasi.webp" alt="Image 3">
-                <img src="images/personal/5.webp" alt="Image 4">
-                <img src="images/personal/dekan_potrait.webp" alt="Image 5">
-                <img src="images/personal/11.webp" alt="Image 6">
-                <img src="images/personal/kpn1.webp" alt="Image 7">
-                <img src="images/personal/5.webp" alt="Image 8">
-                <img src="images/personal/palestine.webp" alt="Image 9">
-                <img src="images/personal/7.webp" alt="Image 10">
-                <img src="images/personal/um.webp" alt="Image 11">
-                <img src="images/personal/9.webp" alt="Image 12">
+        <div class="engine-viewport">
+            <div class="viewport-toolbar">
+                <span>Content</span> <span class="separator">></span> <span class="active">Home</span>
             </div>
-        </div>
+            
+            <div class="viewport-content">
+                <div class="intro-section">
+                    <div class="profile-picture-container">
+                        <img src="images/personal/formal.webp" alt="Profile Picture">
+                    </div>
+                    <div class="intro-text">
+                        <h1>Muhammad Irfan Rusydi Razaleigh</h1>
+                        <p class="tech-tag">Junior Game Programmer @ Passion Republic</p>
+                 
+                        <p>An enthusiastic game developer who love juicy game design and programming.</p>
+                        <div>
+                            <a href="home/personal.html" class="rounded-button">View Resume</a>
+                            <a href="home/work.html" class="rounded-button">View Projects</a>
+                        </div>
+                        
+                        <div class="social-links">
+                            <ul>
+                                <li><a href="https://rusycem.itch.io/" target="_blank"><img src="images/icon/itchio_icon.webp" alt="itch.io"></a></li>
+                                <li><a href="https://www.linkedin.com/in/muhammad-irfan-rusydi-razaleigh/" target="_blank"><img src="images/icon/linkedin_icon.webp" alt="LinkedIn"></a></li>
+                                <li><a href="https://github.com/rusycem" target="_blank"><img src="images/icon/github_icon.webp" alt="GitHub"></a></li>
+                                <li><a href="https://www.youtube.com/@rusycem" target="_blank"><img src="images/icon/youtube_icon.webp" alt="Youtube"></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
 
-        <!-- Second Image slider -->
-        <div class="carousel backward">
-            <div class="image-grid">
-                <img src="images/personal/akrab.webp" alt="Image 1">
-                <img src="images/personal/gamebagus1.webp" alt="Image 2">
-                <img src="images/personal/8.webp" alt="Image 3">
-                <img src="images/personal/kpn_potrait.webp" alt="Image 4">
-                <img src="images/personal/4.webp" alt="Image 5">
-                <img src="images/personal/14.webp" alt="Image 6">
-                <img src="images/personal/um_bro.webp" alt="Image 7">
-                <img src="images/personal/self.webp" alt="Image 8">
-                <img src="images/personal/silat1.webp" alt="Image 9">
-                <img src="images/personal/10.webp" alt="Image 10">
+                <h2>Photo Assets</h2>
+                <div class="image-grid">
+                    <img src="images/personal/dekan1.webp" alt="Image">
+                    <img src="images/personal/1.webp" alt="Image">
+                    <img src="images/personal/asasi.webp" alt="Image">
+                    <img src="images/personal/gamebagus1.webp" alt="Image">
+                    <img src="images/personal/5.webp" alt="Image">
+                    <img src="images/personal/11.webp" alt="Image">
+                    <img src="images/personal/um.webp" alt="Image">
+                    <img src="images/personal/silat1.webp" alt="Image">
+                </div>
+            </div>
+            
+            <div class="engine-statusbar">
+                <span>Ready</span>
+                <span>&copy; 2025 Muhammad Irfan Rusydi Razaleigh</span>
             </div>
         </div>
     </div>
 
-     <footer>
-     <div class="social-links">
-         <ul>
-             <li><a href="https://rusycem.itch.io/"><img src="images/icon/itchio_icon.webp" alt="itch.io"></a></li>
-             <li><a href="https://www.linkedin.com/in/muhammad-irfan-rusydi-razaleigh/"><img src="images/icon/linkedin_icon.webp" alt="LinkedIn"></a></li>
-             <li><a href="https://github.com/rusycem"><img src="images/icon/github_icon.webp" alt="GitHub"></a></li>
-             <li><a href="https://www.youtube.com/@rusycem"><img src="images/icon/youtube_icon.webp" alt="Youtube"></a></li>
-             <li><a href="https://www.facebook.com/muhdirfan.rusydi"><img src="images/icon/facebook_icon.webp" alt="Facebook"></a></li>
-             <li><a href="https://www.instagram.com/irfnrusydi/"><img src="images/icon/instagram_icon.webp" alt="Instagram"></a></li>
-         </ul>
-     </div>
-     <br />
-     <p>&copy; 2025 Muhammad Irfan Rusydi Razaleigh. All rights reserved.</p>
- </footer>
     <script src="js/script.js"></script>
 </body>
 </html>
